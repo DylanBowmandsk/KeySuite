@@ -38,6 +38,7 @@
             this.region = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.addEntryButton = new System.Windows.Forms.Button();
+            this.refreshButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,11 +120,22 @@
             this.addEntryButton.UseVisualStyleBackColor = true;
             this.addEntryButton.Click += new System.EventHandler(this.addEntryButton_Click);
             // 
+            // refreshButton
+            // 
+            this.refreshButton.Location = new System.Drawing.Point(94, 412);
+            this.refreshButton.Name = "refreshButton";
+            this.refreshButton.Size = new System.Drawing.Size(75, 23);
+            this.refreshButton.TabIndex = 3;
+            this.refreshButton.Text = "Refresh";
+            this.refreshButton.UseVisualStyleBackColor = true;
+            this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.refreshButton);
             this.Controls.Add(this.addEntryButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
@@ -147,6 +159,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn steam_url;
         private System.Windows.Forms.DataGridViewTextBoxColumn g2a_url;
         private System.Windows.Forms.DataGridViewTextBoxColumn region;
+        private System.Windows.Forms.Button refreshButton;
     }
 }
 

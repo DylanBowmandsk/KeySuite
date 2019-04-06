@@ -29,5 +29,12 @@ namespace KeySuite
             this.Close();
             root.Show();
         }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            int response;
+            response = DatabaseUtils.insertEntry(this);
+            this.Close();
+        }
     }
 }

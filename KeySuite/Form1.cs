@@ -30,5 +30,10 @@ namespace KeySuite
             addform.Show();
             this.Hide();
         }
+
+        private void refreshButton_Click(object sender, EventArgs e)
+        {
+            DatabaseUtils.fillTable(dataGridView1);
+        }
     }
 }

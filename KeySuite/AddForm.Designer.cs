@@ -176,6 +176,7 @@
             this.addButton.TabIndex = 16;
             this.addButton.Text = "Add";
             this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // AddForm
             // 
@@ -215,14 +216,14 @@
         private System.Windows.Forms.Label steamUrlLabel;
         private System.Windows.Forms.Label g2aUrlLabel;
         private System.Windows.Forms.Label regionLabel;
-        private System.Windows.Forms.TextBox cdTextBox;
-        private System.Windows.Forms.TextBox productTextBox;
-        private System.Windows.Forms.TextBox supplierTextBox;
-        private System.Windows.Forms.TextBox distributorTextBox;
-        private System.Windows.Forms.TextBox steamUrlTextBox;
-        private System.Windows.Forms.TextBox g2aUrlTextBox;
-        private System.Windows.Forms.TextBox regionTextBox;
-        private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.Button addButton;
+        public System.Windows.Forms.TextBox cdTextBox;
+        public System.Windows.Forms.TextBox productTextBox;
+        public System.Windows.Forms.TextBox supplierTextBox;
+        public System.Windows.Forms.TextBox distributorTextBox;
+        public System.Windows.Forms.TextBox steamUrlTextBox;
+        public System.Windows.Forms.TextBox g2aUrlTextBox;
+        public System.Windows.Forms.TextBox regionTextBox;
+        public System.Windows.Forms.Button cancelButton;
+        public System.Windows.Forms.Button addButton;
     }
 }

@@ -24,5 +24,26 @@ namespace KeySuite
                 gridview.DataSource = table;
             }
         }
+
+        public static int insertEntry(AddForm form)
+        {
+            int response;
+
+            using (SqlConnection sqlcon = new SqlConnection(connectionString))
+            {
+                sqlcon.Open();
+                SqlCommand cmd = new SqlCommand("INSERT INTO keys VALUES (@cdkey, @product, @supplier, @distributor, @steam_url, @g2a_url, @region)", sqlcon);
+                cmd.Parameters.AddWithValue("@cdkey", form.cdTextBox.Text);
+                cmd.Parameters.AddWithValue("@product", form.productTextBox.Text);
+                cmd.Parameters.AddWithValue("@supplier", form.supplierTextBox.Text);
+                cmd.Parameters.AddWithValue("@distributor", form.distributorTextBox.Text);
+                cmd.Parameters.AddWithValue("@steam_url", form.steamUrlTextBox.Text);
+                cmd.Parameters.AddWithValue("@g2a_url", form.g2aUrlTextBox.Text);
+                cmd.Parameters.AddWithValue("@region", form.regionTextBox.Text);
+                response = cmd.ExecuteNonQuery();
+            }
+            
+            return response;
+        }
     }
 }
