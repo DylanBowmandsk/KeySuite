@@ -12,9 +12,16 @@ namespace KeySuite
 {
     public partial class AddForm : Form
     {
-        public AddForm()
+        Form1 root;
+        public AddForm(Form1 root)
         {
+            this.root = root;
             InitializeComponent();
+        }
+
+        private void AddForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            root.Show();
         }
     }
 }

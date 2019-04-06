@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(341, 267);
             this.Name = "AddForm";
             this.Text = "AddForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddForm_FormClosed);
             this.ResumeLayout(false);
 
         }
