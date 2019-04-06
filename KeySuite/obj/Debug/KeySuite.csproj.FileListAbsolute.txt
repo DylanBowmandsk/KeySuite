@@ -1,0 +1,11 @@
+C:\Users\SlotR\source\repos\KeySuite\KeySuite\bin\Debug\KeySuite.exe.config
+C:\Users\SlotR\source\repos\KeySuite\KeySuite\bin\Debug\KeySuite.exe
+C:\Users\SlotR\source\repos\KeySuite\KeySuite\bin\Debug\KeySuite.pdb
+C:\Users\SlotR\source\repos\KeySuite\KeySuite\obj\Debug\KeySuite.csprojAssemblyReference.cache
+C:\Users\SlotR\source\repos\KeySuite\KeySuite\obj\Debug\KeySuite.Form1.resources
+C:\Users\SlotR\source\repos\KeySuite\KeySuite\obj\Debug\KeySuite.Properties.Resources.resources
+C:\Users\SlotR\source\repos\KeySuite\KeySuite\obj\Debug\KeySuite.csproj.GenerateResource.cache
+C:\Users\SlotR\source\repos\KeySuite\KeySuite\obj\Debug\KeySuite.csproj.CoreCompileInputs.cache
+C:\Users\SlotR\source\repos\KeySuite\KeySuite\obj\Debug\KeySuite.exe
+C:\Users\SlotR\source\repos\KeySuite\KeySuite\obj\Debug\KeySuite.pdb
+C:\Users\SlotR\source\repos\KeySuite\KeySuite\obj\Debug\KeySuite.AddForm.resources
