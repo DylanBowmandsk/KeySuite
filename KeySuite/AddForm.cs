@@ -23,5 +23,11 @@ namespace KeySuite
         {
             root.Show();
         }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            root.Show();
+        }
     }
 }

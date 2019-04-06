@@ -49,7 +49,7 @@
             // cdKeyLabel
             // 
             this.cdKeyLabel.AutoSize = true;
-            this.cdKeyLabel.Location = new System.Drawing.Point(13, 13);
+            this.cdKeyLabel.Location = new System.Drawing.Point(13, 16);
             this.cdKeyLabel.Name = "cdKeyLabel";
             this.cdKeyLabel.Size = new System.Drawing.Size(43, 13);
             this.cdKeyLabel.TabIndex = 0;
@@ -58,7 +58,7 @@
             // productLabel
             // 
             this.productLabel.AutoSize = true;
-            this.productLabel.Location = new System.Drawing.Point(12, 43);
+            this.productLabel.Location = new System.Drawing.Point(12, 46);
             this.productLabel.Name = "productLabel";
             this.productLabel.Size = new System.Drawing.Size(44, 13);
             this.productLabel.TabIndex = 1;
@@ -67,7 +67,7 @@
             // supplierLabel
             // 
             this.supplierLabel.AutoSize = true;
-            this.supplierLabel.Location = new System.Drawing.Point(13, 70);
+            this.supplierLabel.Location = new System.Drawing.Point(13, 73);
             this.supplierLabel.Name = "supplierLabel";
             this.supplierLabel.Size = new System.Drawing.Size(45, 13);
             this.supplierLabel.TabIndex = 2;
@@ -76,7 +76,7 @@
             // distributorLabel
             // 
             this.distributorLabel.AutoSize = true;
-            this.distributorLabel.Location = new System.Drawing.Point(12, 97);
+            this.distributorLabel.Location = new System.Drawing.Point(12, 100);
             this.distributorLabel.Name = "distributorLabel";
             this.distributorLabel.Size = new System.Drawing.Size(54, 13);
             this.distributorLabel.TabIndex = 3;
@@ -85,7 +85,7 @@
             // steamUrlLabel
             // 
             this.steamUrlLabel.AutoSize = true;
-            this.steamUrlLabel.Location = new System.Drawing.Point(13, 122);
+            this.steamUrlLabel.Location = new System.Drawing.Point(13, 125);
             this.steamUrlLabel.Name = "steamUrlLabel";
             this.steamUrlLabel.Size = new System.Drawing.Size(62, 13);
             this.steamUrlLabel.TabIndex = 4;
@@ -94,7 +94,7 @@
             // g2aUrlLabel
             // 
             this.g2aUrlLabel.AutoSize = true;
-            this.g2aUrlLabel.Location = new System.Drawing.Point(13, 148);
+            this.g2aUrlLabel.Location = new System.Drawing.Point(13, 151);
             this.g2aUrlLabel.Name = "g2aUrlLabel";
             this.g2aUrlLabel.Size = new System.Drawing.Size(53, 13);
             this.g2aUrlLabel.TabIndex = 5;
@@ -103,7 +103,7 @@
             // regionLabel
             // 
             this.regionLabel.AutoSize = true;
-            this.regionLabel.Location = new System.Drawing.Point(13, 174);
+            this.regionLabel.Location = new System.Drawing.Point(13, 177);
             this.regionLabel.Name = "regionLabel";
             this.regionLabel.Size = new System.Drawing.Size(41, 13);
             this.regionLabel.TabIndex = 6;
@@ -111,69 +111,70 @@
             // 
             // cdTextBox
             // 
-            this.cdTextBox.Location = new System.Drawing.Point(105, 13);
+            this.cdTextBox.Location = new System.Drawing.Point(105, 16);
             this.cdTextBox.Name = "cdTextBox";
             this.cdTextBox.Size = new System.Drawing.Size(176, 20);
             this.cdTextBox.TabIndex = 8;
             // 
             // productTextBox
             // 
-            this.productTextBox.Location = new System.Drawing.Point(105, 40);
+            this.productTextBox.Location = new System.Drawing.Point(105, 43);
             this.productTextBox.Name = "productTextBox";
             this.productTextBox.Size = new System.Drawing.Size(176, 20);
             this.productTextBox.TabIndex = 9;
             // 
             // supplierTextBox
             // 
-            this.supplierTextBox.Location = new System.Drawing.Point(105, 67);
+            this.supplierTextBox.Location = new System.Drawing.Point(105, 70);
             this.supplierTextBox.Name = "supplierTextBox";
             this.supplierTextBox.Size = new System.Drawing.Size(113, 20);
             this.supplierTextBox.TabIndex = 10;
             // 
             // distributorTextBox
             // 
-            this.distributorTextBox.Location = new System.Drawing.Point(105, 93);
+            this.distributorTextBox.Location = new System.Drawing.Point(105, 96);
             this.distributorTextBox.Name = "distributorTextBox";
             this.distributorTextBox.Size = new System.Drawing.Size(113, 20);
             this.distributorTextBox.TabIndex = 11;
             // 
             // steamUrlTextBox
             // 
-            this.steamUrlTextBox.Location = new System.Drawing.Point(105, 119);
+            this.steamUrlTextBox.Location = new System.Drawing.Point(105, 122);
             this.steamUrlTextBox.Name = "steamUrlTextBox";
             this.steamUrlTextBox.Size = new System.Drawing.Size(224, 20);
             this.steamUrlTextBox.TabIndex = 12;
             // 
             // g2aUrlTextBox
             // 
-            this.g2aUrlTextBox.Location = new System.Drawing.Point(105, 145);
+            this.g2aUrlTextBox.Location = new System.Drawing.Point(105, 148);
             this.g2aUrlTextBox.Name = "g2aUrlTextBox";
             this.g2aUrlTextBox.Size = new System.Drawing.Size(224, 20);
             this.g2aUrlTextBox.TabIndex = 13;
             // 
             // regionTextBox
             // 
-            this.regionTextBox.Location = new System.Drawing.Point(105, 171);
+            this.regionTextBox.Location = new System.Drawing.Point(105, 174);
             this.regionTextBox.Name = "regionTextBox";
             this.regionTextBox.Size = new System.Drawing.Size(59, 20);
             this.regionTextBox.TabIndex = 14;
             // 
-            // button1
+            // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(105, 197);
-            this.cancelButton.Name = "button1";
+            this.cancelButton.Location = new System.Drawing.Point(105, 200);
+            this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 15;
-            this.cancelButton.Text = "button1";
+            this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
-            // button2
+            // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(186, 197);
-            this.addButton.Name = "button2";
+            this.addButton.Location = new System.Drawing.Point(186, 200);
+            this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(75, 23);
             this.addButton.TabIndex = 16;
-            this.addButton.Text = "button2";
+            this.addButton.Text = "Add";
             this.addButton.UseVisualStyleBackColor = true;
             // 
             // AddForm
