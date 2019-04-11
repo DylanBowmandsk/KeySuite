@@ -12,7 +12,7 @@ namespace KeySuite
 {
     public partial class AddForm : Form
     {
-        Form1 root { get; set; }
+        public Form1 root { get;}
         public AddForm(Form1 root)
         {
             this.root = root;
@@ -33,6 +33,8 @@ namespace KeySuite
         {
             int response;
             response = DatabaseUtils.insertEntry(this);
+            if (response > 0)
+                DatabaseUtils.fillTable(root.dataGridView1);
             this.Close();
         }
     }

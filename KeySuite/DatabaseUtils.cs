@@ -27,7 +27,7 @@ namespace KeySuite
 
         public static int insertEntry(AddForm form)
         {
-            int response;
+            int response = 0;
 
             using (SqlConnection sqlcon = new SqlConnection(connectionString))
             {
@@ -50,9 +50,9 @@ namespace KeySuite
             int response = 0;
             using (SqlConnection sqlcon = new SqlConnection(connectionString))
             {
-                
                 sqlcon.Open();
-                SqlCommand cmd = new SqlCommand("Update keys set cdkey = @cdkey, product = @product, supplier = @supplier, distributor = @distributor, steam_url = @steam_url, g2a_url = @g2a_url, region = @region WHERE cdkey = @current ", sqlcon);
+                SqlCommand cmd = new SqlCommand("Update keys set cdkey = @cdkey, product = @product, supplier = @supplier," +
+                    " distributor = @distributor, steam_url = @steam_url, g2a_url = @g2a_url, region = @region WHERE cdkey = @current ", sqlcon);
                 cmd.Parameters.AddWithValue("@cdkey", form.cdTextBox.Text);
                 cmd.Parameters.AddWithValue("@product", form.productTextBox.Text);
                 cmd.Parameters.AddWithValue("@supplier", form.supplierTextBox.Text);
@@ -63,8 +63,20 @@ namespace KeySuite
                 cmd.Parameters.AddWithValue("@current", form.currentKey);
                 response = cmd.ExecuteNonQuery();
             }
-            return 0;
+            return response;
         }
-        
+        public static int deleteEntry(string current) 
+        {
+            int response = 0;
+
+            using (SqlConnection sqlcon = new SqlConnection(connectionString))
+            {
+                sqlcon.Open();
+                SqlCommand cmd = new SqlCommand("delete from keys where cdkey = @current", sqlcon);
+                cmd.Parameters.AddWithValue("@current", current);
+                response = cmd.ExecuteNonQuery();
+            }
+            return response;
+        }
     }
 }

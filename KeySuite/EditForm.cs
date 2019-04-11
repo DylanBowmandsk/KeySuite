@@ -12,8 +12,8 @@ namespace KeySuite
 {
     public partial class EditForm : Form
     {
-        public Form1 root { get; set; }
-        public string currentKey { get; set; }
+        public Form1 root { get; }
+        public string currentKey { get;}
 
         public EditForm(Form1 root, string currentKey)
         {
