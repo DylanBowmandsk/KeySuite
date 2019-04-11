@@ -28,7 +28,7 @@ namespace KeySuite
         {
             AddForm addform = new AddForm(this);
             addform.Show();
-            this.Hide();
+            this.Enabled = false;
         }
 
         private void refreshButton_Click(object sender, EventArgs e)

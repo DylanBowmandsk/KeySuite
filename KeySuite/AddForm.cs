@@ -21,7 +21,7 @@ namespace KeySuite
 
         private void AddForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            root.Show();
+            root.Enabled = true;
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
