@@ -45,5 +45,10 @@ namespace KeySuite
             
             return response;
         }
+
+        public static int modifyEntry(EditForm form) {
+            return 0;
+        }
+        
     }
 }

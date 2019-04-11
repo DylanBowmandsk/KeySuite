@@ -1,6 +1,6 @@
 ﻿namespace KeySuite
 {
-    partial class AddForm
+    partial class EditForm
     {
         /// <summary>
         /// Required designer variable.
@@ -43,7 +43,7 @@
             this.g2aUrlTextBox = new System.Windows.Forms.TextBox();
             this.regionTextBox = new System.Windows.Forms.TextBox();
             this.cancelButton = new System.Windows.Forms.Button();
-            this.addButton = new System.Windows.Forms.Button();
+            this.confirmButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cdKeyLabel
@@ -168,22 +168,22 @@
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
-            // addButton
+            // confirmButton
             // 
-            this.addButton.Location = new System.Drawing.Point(186, 200);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(75, 23);
-            this.addButton.TabIndex = 16;
-            this.addButton.Text = "Add";
-            this.addButton.UseVisualStyleBackColor = true;
-            this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            this.confirmButton.Location = new System.Drawing.Point(186, 200);
+            this.confirmButton.Name = "confirmButton";
+            this.confirmButton.Size = new System.Drawing.Size(75, 23);
+            this.confirmButton.TabIndex = 16;
+            this.confirmButton.Text = "Confirm";
+            this.confirmButton.UseVisualStyleBackColor = true;
+            this.confirmButton.Click += new System.EventHandler(this.confirmButton_Click);
             // 
-            // AddForm
+            // EditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(350, 243);
-            this.Controls.Add(this.addButton);
+            this.Controls.Add(this.confirmButton);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.regionTextBox);
             this.Controls.Add(this.g2aUrlTextBox);
@@ -199,9 +199,9 @@
             this.Controls.Add(this.supplierLabel);
             this.Controls.Add(this.productLabel);
             this.Controls.Add(this.cdKeyLabel);
-            this.Name = "AddForm";
-            this.Text = "AddForm";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddForm_FormClosed);
+            this.Name = "EditForm";
+            this.Text = "EditForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EditForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -224,6 +224,6 @@
         public System.Windows.Forms.TextBox g2aUrlTextBox;
         public System.Windows.Forms.TextBox regionTextBox;
         public System.Windows.Forms.Button cancelButton;
-        public System.Windows.Forms.Button addButton;
+        public System.Windows.Forms.Button confirmButton;
     }
 }

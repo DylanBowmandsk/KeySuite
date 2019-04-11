@@ -13,6 +13,9 @@ namespace KeySuite
 {
     public partial class Form1 : Form
     {
+
+        int currentRow = 0;
+
         public Form1()
         {
             InitializeComponent();
@@ -21,7 +24,7 @@ namespace KeySuite
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            currentRow = e.RowIndex;
         }
 
         private void addEntryButton_Click(object sender, EventArgs e)
@@ -34,6 +37,13 @@ namespace KeySuite
         private void refreshButton_Click(object sender, EventArgs e)
         {
             DatabaseUtils.fillTable(dataGridView1);
+        }
+
+        private void editButton_Click(object sender, EventArgs e)
+        {
+            EditForm addform = new EditForm(this);
+            addform.Show();
+            this.Enabled = false;
         }
     }
 }
