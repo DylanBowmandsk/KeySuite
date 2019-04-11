@@ -12,17 +12,20 @@ namespace KeySuite
 {
     public partial class EditForm : Form
     {
-        Form1 root;
+        public Form1 root { get; set; }
+        public string currentKey { get; set; }
 
-        public EditForm(Form1 root)
+        public EditForm(Form1 root, string currentKey)
         {
             this.root = root;
+            this.currentKey = currentKey;
             InitializeComponent();
         }
 
         private void confirmButton_Click(object sender, EventArgs e)
         {
-
+            DatabaseUtils.modifyEntry(this);
+            this.Close();
         }
 
         private void EditForm_FormClosed(object sender, FormClosedEventArgs e)

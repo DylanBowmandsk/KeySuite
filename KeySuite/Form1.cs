@@ -14,7 +14,7 @@ namespace KeySuite
     public partial class Form1 : Form
     {
 
-        int currentRow = 0;
+        public int currentRow = 0;
 
         public Form1()
         {
@@ -41,7 +41,9 @@ namespace KeySuite
 
         private void editButton_Click(object sender, EventArgs e)
         {
-            EditForm addform = new EditForm(this);
+            string currentKey = dataGridView1.Rows[currentRow].Cells[0].Value.ToString();
+            MessageBox.Show(currentKey);
+            EditForm addform = new EditForm(this,currentKey);
             addform.Show();
             this.Enabled = false;
         }

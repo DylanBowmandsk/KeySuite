@@ -1,0 +1,9 @@
+known issues.
+
+no validation anywhere
+
+getters and setters are a mess
+
+huge exception if a new primary key is added that matches a previous one
+
+thing is working on black magic and my dwindling spirit

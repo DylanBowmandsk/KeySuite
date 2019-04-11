@@ -12,7 +12,7 @@ namespace KeySuite
 {
     public partial class AddForm : Form
     {
-        Form1 root;
+        Form1 root { get; set; }
         public AddForm(Form1 root)
         {
             this.root = root;

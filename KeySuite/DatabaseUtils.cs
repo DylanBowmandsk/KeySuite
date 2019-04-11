@@ -47,6 +47,22 @@ namespace KeySuite
         }
 
         public static int modifyEntry(EditForm form) {
+            int response = 0;
+            using (SqlConnection sqlcon = new SqlConnection(connectionString))
+            {
+                
+                sqlcon.Open();
+                SqlCommand cmd = new SqlCommand("Update keys set cdkey = @cdkey, product = @product, supplier = @supplier, distributor = @distributor, steam_url = @steam_url, g2a_url = @g2a_url, region = @region WHERE cdkey = @current ", sqlcon);
+                cmd.Parameters.AddWithValue("@cdkey", form.cdTextBox.Text);
+                cmd.Parameters.AddWithValue("@product", form.productTextBox.Text);
+                cmd.Parameters.AddWithValue("@supplier", form.supplierTextBox.Text);
+                cmd.Parameters.AddWithValue("@distributor", form.distributorTextBox.Text);
+                cmd.Parameters.AddWithValue("@steam_url", form.steamUrlTextBox.Text);
+                cmd.Parameters.AddWithValue("@g2a_url", form.g2aUrlTextBox.Text);
+                cmd.Parameters.AddWithValue("@region", form.regionTextBox.Text);
+                cmd.Parameters.AddWithValue("@current", form.currentKey);
+                response = cmd.ExecuteNonQuery();
+            }
             return 0;
         }
         
