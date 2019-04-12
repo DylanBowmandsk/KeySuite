@@ -47,7 +47,9 @@ namespace KeySuite
         }
 
         public static int modifyEntry(EditForm form) {
+
             int response = 0;
+
             using (SqlConnection sqlcon = new SqlConnection(connectionString))
             {
                 sqlcon.Open();

@@ -14,7 +14,7 @@ namespace KeySuite
     public partial class Form1 : Form
     {
 
-        public int currentRow = -1;
+        public int currentRow = 0;
 
         public Form1()
         {
@@ -41,10 +41,13 @@ namespace KeySuite
 
         private void editButton_Click(object sender, EventArgs e)
         {
-            if (currentRow >= 0)
+            if (dataGridView1.CurrentCell == null)
+            {
+                MessageBox.Show("No entries available");
+            }
+            else
             {
                 string currentKey = dataGridView1.Rows[currentRow].Cells[0].Value.ToString();
-                MessageBox.Show(currentKey);
                 EditForm addform = new EditForm(this, currentKey);
                 addform.Show();
                 this.Enabled = false;
@@ -53,16 +56,17 @@ namespace KeySuite
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            if (currentRow > -1)
+            if(dataGridView1.CurrentCell == null)
+            {
+                MessageBox.Show("No entries available");
+            }
+            else
             {
                 string currentKey = dataGridView1.Rows[currentRow].Cells[0].Value.ToString();
                 DatabaseUtils.deleteEntry(currentKey);
                 DatabaseUtils.fillTable(dataGridView1);
             }
-            else
-            {
-                MessageBox.Show("Please select an entry to delete");
-            }
+
         }
     }
 }

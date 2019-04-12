@@ -24,7 +24,9 @@ namespace KeySuite
 
         private void confirmButton_Click(object sender, EventArgs e)
         {
-            DatabaseUtils.modifyEntry(this);
+            int response = DatabaseUtils.modifyEntry(this);
+            if (response > 0)
+                DatabaseUtils.fillTable(root.dataGridView1);
             this.Close();
         }
 
