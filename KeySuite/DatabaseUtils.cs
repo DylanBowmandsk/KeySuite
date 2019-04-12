@@ -29,20 +29,28 @@ namespace KeySuite
         {
             int response = 0;
 
-            using (SqlConnection sqlcon = new SqlConnection(connectionString))
+            try { 
+                using (SqlConnection sqlcon = new SqlConnection(connectionString))
+                {
+                    sqlcon.Open();
+                    SqlCommand cmd = new SqlCommand("INSERT INTO keys VALUES (@cdkey, @product, @supplier, @distributor, @steam_url, @g2a_url, @region)", sqlcon);
+                    cmd.Parameters.AddWithValue("@cdkey", form.cdTextBox.Text);
+                    cmd.Parameters.AddWithValue("@product", form.productTextBox.Text);
+                    cmd.Parameters.AddWithValue("@supplier", form.supplierTextBox.Text);
+                    cmd.Parameters.AddWithValue("@distributor", form.distributorTextBox.Text);
+                    cmd.Parameters.AddWithValue("@steam_url", form.steamUrlTextBox.Text);
+                    cmd.Parameters.AddWithValue("@g2a_url", form.g2aUrlTextBox.Text);
+                    cmd.Parameters.AddWithValue("@region", form.regionTextBox.Text);
+                    response = cmd.ExecuteNonQuery();
+                }
+            }
+            catch(Exception e)
             {
-                sqlcon.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO keys VALUES (@cdkey, @product, @supplier, @distributor, @steam_url, @g2a_url, @region)", sqlcon);
-                cmd.Parameters.AddWithValue("@cdkey", form.cdTextBox.Text);
-                cmd.Parameters.AddWithValue("@product", form.productTextBox.Text);
-                cmd.Parameters.AddWithValue("@supplier", form.supplierTextBox.Text);
-                cmd.Parameters.AddWithValue("@distributor", form.distributorTextBox.Text);
-                cmd.Parameters.AddWithValue("@steam_url", form.steamUrlTextBox.Text);
-                cmd.Parameters.AddWithValue("@g2a_url", form.g2aUrlTextBox.Text);
-                cmd.Parameters.AddWithValue("@region", form.regionTextBox.Text);
-                response = cmd.ExecuteNonQuery();
+                response = -1;
             }
             
+
+
             return response;
         }
 

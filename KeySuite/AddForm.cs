@@ -34,8 +34,12 @@ namespace KeySuite
             int response;
             response = DatabaseUtils.insertEntry(this);
             if (response > 0)
+            {
+                this.Close();
                 DatabaseUtils.fillTable(root.dataGridView1);
-            this.Close();
+            }
+            if (response == -1)
+                MessageBox.Show("Duplicate key");
         }
     }
 }

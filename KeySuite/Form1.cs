@@ -65,6 +65,7 @@ namespace KeySuite
                 string currentKey = dataGridView1.Rows[currentRow].Cells[0].Value.ToString();
                 DatabaseUtils.deleteEntry(currentKey);
                 DatabaseUtils.fillTable(dataGridView1);
+                currentRow = 0;
             }
 
         }
