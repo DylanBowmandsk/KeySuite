@@ -53,10 +53,15 @@ namespace KeySuite
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            if (currentRow >= 0)
+            if (currentRow > -1)
             {
                 string currentKey = dataGridView1.Rows[currentRow].Cells[0].Value.ToString();
                 DatabaseUtils.deleteEntry(currentKey);
+                DatabaseUtils.fillTable(dataGridView1);
+            }
+            else
+            {
+                MessageBox.Show("Please select an entry to delete");
             }
         }
     }
