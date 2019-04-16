@@ -67,6 +67,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(776, 364);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // cdkey
             // 
@@ -191,7 +192,6 @@
             this.categoryComboBox.Name = "categoryComboBox";
             this.categoryComboBox.Size = new System.Drawing.Size(121, 21);
             this.categoryComboBox.TabIndex = 8;
-            this.categoryComboBox.SelectedIndex = 0;
             // 
             // Form1
             // 
