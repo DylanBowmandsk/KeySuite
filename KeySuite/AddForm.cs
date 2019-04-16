@@ -38,7 +38,7 @@ namespace KeySuite
                 this.Close();
                 DatabaseUtils.fillTable(root.dataGridView1);
             }
-            if (response == -1)
+            if (response == 0)
                 MessageBox.Show("Duplicate key");
         }
     }

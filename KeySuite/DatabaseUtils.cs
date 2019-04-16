@@ -11,7 +11,7 @@ namespace KeySuite
 {
     class DatabaseUtils
     {
-        private static string connectionString = @"Data Source=localhost;Initial Catalog=KeySuite;Integrated Security=True";
+        private static  string connectionString = @"Data Source=localhost;Initial Catalog=KeySuite;Integrated Security=True";
 
         public static void fillTable(DataGridView gridview)
         {
@@ -46,15 +46,13 @@ namespace KeySuite
             }
             catch(Exception e)
             {
-                response = -1;
+                response = 0;
             }
             
-
-
             return response;
         }
 
-        public static int modifyEntry(EditForm form) {
+        public static int modifyEntry(EditForm form, string currentKey) {
 
             int response = 0;
 
@@ -70,9 +68,10 @@ namespace KeySuite
                 cmd.Parameters.AddWithValue("@steam_url", form.steamUrlTextBox.Text);
                 cmd.Parameters.AddWithValue("@g2a_url", form.g2aUrlTextBox.Text);
                 cmd.Parameters.AddWithValue("@region", form.regionTextBox.Text);
-                cmd.Parameters.AddWithValue("@current", form.currentKey);
+                cmd.Parameters.AddWithValue("@current", currentKey);
                 response = cmd.ExecuteNonQuery();
             }
+
             return response;
         }
         public static int deleteEntry(string current) 

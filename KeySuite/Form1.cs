@@ -48,8 +48,8 @@ namespace KeySuite
             else
             {
                 string currentKey = dataGridView1.Rows[currentRow].Cells[0].Value.ToString();
-                EditForm addform = new EditForm(this, currentKey);
-                addform.Show();
+                EditForm editForm = new EditForm(this, currentKey);
+                editForm.Show();
                 this.Enabled = false;
             }
         }

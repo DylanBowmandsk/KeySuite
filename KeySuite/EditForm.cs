@@ -13,7 +13,7 @@ namespace KeySuite
     public partial class EditForm : Form
     {
         public Form1 root { get; }
-        public string currentKey { get;}
+        private string currentKey { get;}
 
         public EditForm(Form1 root, string currentKey)
         {
@@ -24,7 +24,7 @@ namespace KeySuite
 
         private void confirmButton_Click(object sender, EventArgs e)
         {
-            int response = DatabaseUtils.modifyEntry(this);
+            int response = DatabaseUtils.modifyEntry(this,currentKey);
             if (response > 0)
                 DatabaseUtils.fillTable(root.dataGridView1);
             this.Close();
