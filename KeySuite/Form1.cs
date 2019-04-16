@@ -31,6 +31,7 @@ namespace KeySuite
         {
             AddForm addform = new AddForm(this);
             addform.Show();
+
             this.Enabled = false;
         }
 
@@ -54,6 +55,7 @@ namespace KeySuite
                 string steam_url = dataGridView1.Rows[currentRow].Cells[4].Value.ToString();
                 string g2a_url = dataGridView1.Rows[currentRow].Cells[5].Value.ToString();
                 string region = dataGridView1.Rows[currentRow].Cells[6].Value.ToString();
+
                 EditForm editForm = new EditForm(this, new Key(currentKey,
                     product,
                     supplier,
@@ -62,6 +64,7 @@ namespace KeySuite
                     g2a_url,
                     region));
                 editForm.Show();
+
                 this.Enabled = false;
                 
             }
@@ -76,8 +79,10 @@ namespace KeySuite
             else
             {
                 string currentKey = dataGridView1.Rows[currentRow].Cells[0].Value.ToString();
+
                 DatabaseUtils.deleteEntry(currentKey);
                 DatabaseUtils.fillTable(dataGridView1);
+
                 currentRow = 0;
             }
 
@@ -97,6 +102,7 @@ namespace KeySuite
             string steam_url = dataGridView1.Rows[currentRow].Cells[4].Value.ToString();
             string g2a_url = dataGridView1.Rows[currentRow].Cells[5].Value.ToString();
             string region = dataGridView1.Rows[currentRow].Cells[6].Value.ToString();
+
             EditForm editForm = new EditForm(this, new Key(currentKey,
                 product,
                 supplier,
@@ -105,6 +111,7 @@ namespace KeySuite
                 g2a_url,
                 region));
             editForm.Show();
+
             this.Enabled = false;
         }
     }
