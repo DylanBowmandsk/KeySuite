@@ -13,7 +13,7 @@ namespace KeySuite
     {
         private static  string connectionString = @"Data Source=localhost;Initial Catalog=KeySuite;Integrated Security=True";
 
-        public static void fillTable(DataGridView gridview)
+        public static void fillTable(DataGridView gridView)
         {
             using (SqlConnection sqlcon = new SqlConnection(connectionString))
             {
@@ -21,7 +21,19 @@ namespace KeySuite
                 SqlDataAdapter dataAdapter = new SqlDataAdapter("select * from keys", sqlcon);
                 DataTable table = new DataTable();
                 dataAdapter.Fill(table);
-                gridview.DataSource = table;
+                gridView.DataSource = table;
+            }
+        }
+
+        public static void searchTable(DataGridView gridView,string searchTerm,string category)
+        {
+            using (SqlConnection sqlcon = new SqlConnection(connectionString))
+            {
+                sqlcon.Open();
+                SqlDataAdapter dataAdapter = new SqlDataAdapter($"select * from keys where {category} like '%{searchTerm}%'", sqlcon);
+                DataTable table = new DataTable();
+                dataAdapter.Fill(table);
+                gridView.DataSource = table;
             }
         }
 

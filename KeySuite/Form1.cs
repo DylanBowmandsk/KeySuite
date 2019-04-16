@@ -82,5 +82,10 @@ namespace KeySuite
             }
 
         }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            DatabaseUtils.searchTable(dataGridView1, searchBox.Text, categoryComboBox.Text);
+        }
     }
 }

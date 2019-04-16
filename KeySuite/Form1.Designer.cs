@@ -36,11 +36,13 @@
             this.steam_url = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.g2a_url = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.region = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
             this.addEntryButton = new System.Windows.Forms.Button();
             this.refreshButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
+            this.searchBox = new System.Windows.Forms.TextBox();
+            this.searchButton = new System.Windows.Forms.Button();
+            this.categoryComboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,15 +117,6 @@
             this.region.Name = "region";
             this.region.ReadOnly = true;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Search";
-            // 
             // addEntryButton
             // 
             this.addEntryButton.Location = new System.Drawing.Point(12, 412);
@@ -165,16 +158,53 @@
             this.deleteButton.UseVisualStyleBackColor = true;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
+            // searchBox
+            // 
+            this.searchBox.Location = new System.Drawing.Point(94, 12);
+            this.searchBox.Name = "searchBox";
+            this.searchBox.Size = new System.Drawing.Size(191, 20);
+            this.searchBox.TabIndex = 6;
+            // 
+            // searchButton
+            // 
+            this.searchButton.Location = new System.Drawing.Point(12, 10);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(75, 23);
+            this.searchButton.TabIndex = 7;
+            this.searchButton.Text = "Search";
+            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            // 
+            // categoryComboBox
+            // 
+            this.categoryComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.categoryComboBox.FormattingEnabled = true;
+            this.categoryComboBox.Items.AddRange(new object[] {
+            "cdkey",
+            "product",
+            "supplier",
+            "distributor",
+            "steam_url",
+            "g2a_url",
+            "region"});
+            this.categoryComboBox.Location = new System.Drawing.Point(291, 12);
+            this.categoryComboBox.Name = "categoryComboBox";
+            this.categoryComboBox.Size = new System.Drawing.Size(121, 21);
+            this.categoryComboBox.TabIndex = 8;
+            this.categoryComboBox.SelectedIndex = 0;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.categoryComboBox);
+            this.Controls.Add(this.searchButton);
+            this.Controls.Add(this.searchBox);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.refreshButton);
             this.Controls.Add(this.addEntryButton);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form1";
             this.Text = "KeySuite";
@@ -187,7 +217,6 @@
         #endregion
 
         public System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button addEntryButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn cdkey;
         private System.Windows.Forms.DataGridViewTextBoxColumn product;
@@ -199,6 +228,9 @@
         private System.Windows.Forms.Button refreshButton;
         private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.TextBox searchBox;
+        private System.Windows.Forms.Button searchButton;
+        private System.Windows.Forms.ComboBox categoryComboBox;
     }
 }
 

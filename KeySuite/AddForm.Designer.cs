@@ -200,7 +200,7 @@
             this.Controls.Add(this.productLabel);
             this.Controls.Add(this.cdKeyLabel);
             this.Name = "AddForm";
-            this.Text = "AddForm";
+            this.Text = "Add Entry";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
