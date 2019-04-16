@@ -63,7 +63,7 @@ namespace KeySuite
                     region));
                 editForm.Show();
                 this.Enabled = false;
-                MessageBox.Show(currentKey+ product+ supplier+ distributor+ steam_url+ g2a_url+ region);
+                
             }
         }
 

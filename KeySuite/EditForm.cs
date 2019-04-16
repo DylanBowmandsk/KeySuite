@@ -20,6 +20,14 @@ namespace KeySuite
             this.root = root;
             this.currentKey = currentKey;
             InitializeComponent();
+
+            this.cdTextBox.Text = this.currentKey.cdkey;
+            this.productTextBox.Text = this.currentKey.product;
+            this.supplierTextBox.Text = this.currentKey.supplier;
+            this.distributorTextBox.Text = this.currentKey.distributor;
+            this.steamUrlTextBox.Text = this.currentKey.steam_url;
+            this.g2aUrlTextBox.Text = this.currentKey.g2a_url;
+            this.regionTextBox.Text = this.currentKey.region;
         }
 
         private void confirmButton_Click(object sender, EventArgs e)
