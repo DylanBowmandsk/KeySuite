@@ -71,42 +71,49 @@
             this.cdkey.DataPropertyName = "cdkey";
             this.cdkey.HeaderText = "cdkey";
             this.cdkey.Name = "cdkey";
+            this.cdkey.ReadOnly = true;
             // 
             // product
             // 
             this.product.DataPropertyName = "product";
             this.product.HeaderText = "product";
             this.product.Name = "product";
+            this.product.ReadOnly = true;
             // 
             // supplier
             // 
             this.supplier.DataPropertyName = "supplier";
             this.supplier.HeaderText = "supplier";
             this.supplier.Name = "supplier";
+            this.supplier.ReadOnly = true;
             // 
             // distributor
             // 
             this.distributor.DataPropertyName = "distributor";
             this.distributor.HeaderText = "distributor";
             this.distributor.Name = "distributor";
+            this.distributor.ReadOnly = true;
             // 
             // steam_url
             // 
             this.steam_url.DataPropertyName = "steam_url";
             this.steam_url.HeaderText = "steam_url";
             this.steam_url.Name = "steam_url";
+            this.steam_url.ReadOnly = true;
             // 
             // g2a_url
             // 
             this.g2a_url.DataPropertyName = "g2a_url";
             this.g2a_url.HeaderText = "g2a_url";
             this.g2a_url.Name = "g2a_url";
+            this.g2a_url.ReadOnly = true;
             // 
             // region
             // 
             this.region.DataPropertyName = "region";
             this.region.HeaderText = "region";
             this.region.Name = "region";
+            this.region.ReadOnly = true;
             // 
             // label1
             // 
@@ -170,7 +177,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "KeySuite";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
