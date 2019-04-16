@@ -46,11 +46,24 @@ namespace KeySuite
                 MessageBox.Show("No entries available");
             }
             else
-            {
+            { 
                 string currentKey = dataGridView1.Rows[currentRow].Cells[0].Value.ToString();
-                EditForm editForm = new EditForm(this, currentKey);
+                string product = dataGridView1.Rows[currentRow].Cells[1].Value.ToString();
+                string supplier = dataGridView1.Rows[currentRow].Cells[2].Value.ToString();
+                string distributor = dataGridView1.Rows[currentRow].Cells[3].Value.ToString();
+                string steam_url = dataGridView1.Rows[currentRow].Cells[4].Value.ToString();
+                string g2a_url = dataGridView1.Rows[currentRow].Cells[5].Value.ToString();
+                string region = dataGridView1.Rows[currentRow].Cells[6].Value.ToString();
+                EditForm editForm = new EditForm(this, new Key(currentKey,
+                    product,
+                    supplier,
+                    distributor,
+                    steam_url,
+                    g2a_url,
+                    region));
                 editForm.Show();
                 this.Enabled = false;
+                MessageBox.Show(currentKey+ product+ supplier+ distributor+ steam_url+ g2a_url+ region);
             }
         }
 

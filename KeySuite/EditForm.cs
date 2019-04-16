@@ -13,9 +13,9 @@ namespace KeySuite
     public partial class EditForm : Form
     {
         public Form1 root { get; }
-        private string currentKey { get;}
+        private Key currentKey { get;}
 
-        public EditForm(Form1 root, string currentKey)
+        public EditForm(Form1 root, Key currentKey)
         {
             this.root = root;
             this.currentKey = currentKey;
@@ -24,7 +24,7 @@ namespace KeySuite
 
         private void confirmButton_Click(object sender, EventArgs e)
         {
-            int response = DatabaseUtils.modifyEntry(this,currentKey);
+            int response = DatabaseUtils.modifyEntry(this,currentKey.cdkey);
             if (response > 0)
                 DatabaseUtils.fillTable(root.dataGridView1);
             this.Close();
