@@ -32,7 +32,14 @@ namespace KeySuite
         private void addButton_Click(object sender, EventArgs e)
         {
             int response;
-            response = DatabaseUtils.insertEntry(this);
+            Key key = new Key(cdTextBox.Text,
+                productTextBox.Text,
+                supplierTextBox.Text,
+                distributorTextBox.Text,
+                steamUrlTextBox.Text,
+                g2aUrlTextBox.Text,
+                regionTextBox.Text);
+            response = DatabaseUtils.insertEntry(key);
             if (response > 0)
             {
                 this.Close();

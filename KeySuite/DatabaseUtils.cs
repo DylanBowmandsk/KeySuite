@@ -37,7 +37,7 @@ namespace KeySuite
             }
         }
 
-        public static int insertEntry(AddForm form)
+        public static int insertEntry(Key key)
         {
             int response = 0;
 
@@ -46,13 +46,13 @@ namespace KeySuite
                 {
                     sqlcon.Open();
                     SqlCommand cmd = new SqlCommand("INSERT INTO keys VALUES (@cdkey, @product, @supplier, @distributor, @steam_url, @g2a_url, @region)", sqlcon);
-                    cmd.Parameters.AddWithValue("@cdkey", form.cdTextBox.Text);
-                    cmd.Parameters.AddWithValue("@product", form.productTextBox.Text);
-                    cmd.Parameters.AddWithValue("@supplier", form.supplierTextBox.Text);
-                    cmd.Parameters.AddWithValue("@distributor", form.distributorTextBox.Text);
-                    cmd.Parameters.AddWithValue("@steam_url", form.steamUrlTextBox.Text);
-                    cmd.Parameters.AddWithValue("@g2a_url", form.g2aUrlTextBox.Text);
-                    cmd.Parameters.AddWithValue("@region", form.regionTextBox.Text);
+                    cmd.Parameters.AddWithValue("@cdkey", key.cdkey);
+                    cmd.Parameters.AddWithValue("@product", key.product);
+                    cmd.Parameters.AddWithValue("@supplier", key.supplier);
+                    cmd.Parameters.AddWithValue("@distributor", key.distributor);
+                    cmd.Parameters.AddWithValue("@steam_url", key.steam_url);
+                    cmd.Parameters.AddWithValue("@g2a_url", key.g2a_url);
+                    cmd.Parameters.AddWithValue("@region", key.region);
                     response = cmd.ExecuteNonQuery();
                 }
             }
