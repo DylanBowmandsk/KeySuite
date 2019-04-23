@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Scripting.Hosting;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,7 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using IronPython.Runtime;
+using IronPython.Hosting;
 namespace KeySuite
 {
     public partial class Form1 : Form
@@ -25,7 +27,14 @@ namespace KeySuite
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             currentRow = e.RowIndex;
+
+            if (currentRow >= 0)
+            {
+                string url = dataGridView1.Rows[currentRow].Cells[4].Value.ToString();
+                string price = PythonUtils.getSteamPrice(url);
+            }
         }
+
 
         private void addEntryButton_Click(object sender, EventArgs e)
         {

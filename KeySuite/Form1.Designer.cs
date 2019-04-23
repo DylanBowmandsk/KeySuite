@@ -43,6 +43,7 @@
             this.searchBox = new System.Windows.Forms.TextBox();
             this.searchButton = new System.Windows.Forms.Button();
             this.categoryComboBox = new System.Windows.Forms.ComboBox();
+            this.marketPriceLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -192,13 +193,22 @@
             this.categoryComboBox.Name = "categoryComboBox";
             this.categoryComboBox.Size = new System.Drawing.Size(121, 21);
             this.categoryComboBox.TabIndex = 8;
-            this.categoryComboBox.SelectedIndex = 0;
+            // 
+            // marketPriceLabel
+            // 
+            this.marketPriceLabel.AutoSize = true;
+            this.marketPriceLabel.Location = new System.Drawing.Point(358, 421);
+            this.marketPriceLabel.Name = "marketPriceLabel";
+            this.marketPriceLabel.Size = new System.Drawing.Size(66, 13);
+            this.marketPriceLabel.TabIndex = 9;
+            this.marketPriceLabel.Text = "nothing here";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.marketPriceLabel);
             this.Controls.Add(this.categoryComboBox);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.searchBox);
@@ -232,6 +242,7 @@
         private System.Windows.Forms.TextBox searchBox;
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.ComboBox categoryComboBox;
+        private System.Windows.Forms.Label marketPriceLabel;
     }
 }
 

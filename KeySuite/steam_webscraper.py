@@ -1,8 +1,7 @@
 import sys,requests
 from bs4 import BeautifulSoup
 
-keys_on_market = None
-market_price = None
+steam_price = None
 
 steam_url = sys.argv[1]
 response = requests.get(steam_url)
