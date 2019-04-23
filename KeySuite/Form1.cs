@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using IronPython.Runtime;
 using IronPython.Hosting;
 using System.Net;
+using System.Threading;
 
 namespace KeySuite
 {
