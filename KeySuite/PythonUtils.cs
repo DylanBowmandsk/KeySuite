@@ -20,7 +20,7 @@ namespace KeySuite
             
 
             Process proc = new Process();
-            proc.StartInfo.FileName = "python.exe";
+            proc.StartInfo.FileName = "pythonw.exe";
             proc.StartInfo.RedirectStandardOutput = true;
             proc.StartInfo.UseShellExecute = false;
 
@@ -41,7 +41,7 @@ namespace KeySuite
             char[] splitter = { '\r' };
 
             Process proc = new Process();
-            proc.StartInfo.FileName = "python.exe";
+            proc.StartInfo.FileName = "pythonw.exe";
             proc.StartInfo.RedirectStandardOutput = true;
             proc.StartInfo.UseShellExecute = false;
 

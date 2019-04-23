@@ -274,8 +274,8 @@
             // databaseStatusLabel
             // 
             this.databaseStatusLabel.Name = "databaseStatusLabel";
-            this.databaseStatusLabel.Size = new System.Drawing.Size(172, 17);
-            this.databaseStatusLabel.Text = "Dattabase Status: Disconnected";
+            this.databaseStatusLabel.Size = new System.Drawing.Size(168, 17);
+            this.databaseStatusLabel.Text = "Database Status: Disconnected";
             // 
             // internetStatusLabel
             // 
