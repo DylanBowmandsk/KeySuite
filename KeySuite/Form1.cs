@@ -11,6 +11,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using IronPython.Runtime;
 using IronPython.Hosting;
+using System.Net;
+
 namespace KeySuite
 {
     public partial class Form1 : Form
@@ -21,7 +23,11 @@ namespace KeySuite
         public Form1()
         {
             InitializeComponent();
-            DatabaseUtils.fillTable(dataGridView1);
+            if (CheckForInternetConnection() == true)
+                internetStatusLabel.Text = "Internet Connection: Connected";
+
+            if (DatabaseUtils.fillTable(dataGridView1))
+                databaseStatusLabel.Text = "Database Status: Connected";
             
         }
 
@@ -141,6 +147,20 @@ namespace KeySuite
             this.Enabled = false;
         }
 
-
+        public static bool CheckForInternetConnection()
+        {
+            try
+            {
+                using (var client = new WebClient())
+                using (client.OpenRead("http://clients3.google.com/generate_204"))
+                {
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

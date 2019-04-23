@@ -13,15 +13,22 @@ namespace KeySuite
     {
         private static  string connectionString = @"Data Source=localhost;Initial Catalog=KeySuite;Integrated Security=True";
 
-        public static void fillTable(DataGridView gridView)
+        public static bool fillTable(DataGridView gridView)
         {
-            using (SqlConnection sqlcon = new SqlConnection(connectionString))
+            try { 
+                using (SqlConnection sqlcon = new SqlConnection(connectionString))
+                {
+                    sqlcon.Open();
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter("select * from keys", sqlcon);
+                    DataTable table = new DataTable();
+                    dataAdapter.Fill(table);
+                    gridView.DataSource = table;
+                    return true;
+                }
+            }
+            catch
             {
-                sqlcon.Open();
-                SqlDataAdapter dataAdapter = new SqlDataAdapter("select * from keys", sqlcon);
-                DataTable table = new DataTable();
-                dataAdapter.Fill(table);
-                gridView.DataSource = table;
+                return false;
             }
         }
 

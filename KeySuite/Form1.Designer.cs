@@ -49,7 +49,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.databaseStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.internetStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -128,7 +132,7 @@
             // 
             this.addEntryButton.Location = new System.Drawing.Point(12, 412);
             this.addEntryButton.Name = "addEntryButton";
-            this.addEntryButton.Size = new System.Drawing.Size(75, 23);
+            this.addEntryButton.Size = new System.Drawing.Size(75, 36);
             this.addEntryButton.TabIndex = 2;
             this.addEntryButton.Text = "Add";
             this.addEntryButton.UseVisualStyleBackColor = true;
@@ -138,7 +142,7 @@
             // 
             this.refreshButton.Location = new System.Drawing.Point(94, 412);
             this.refreshButton.Name = "refreshButton";
-            this.refreshButton.Size = new System.Drawing.Size(75, 23);
+            this.refreshButton.Size = new System.Drawing.Size(75, 36);
             this.refreshButton.TabIndex = 3;
             this.refreshButton.Text = "Refresh";
             this.refreshButton.UseVisualStyleBackColor = true;
@@ -149,7 +153,7 @@
             this.editButton.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.editButton.Location = new System.Drawing.Point(176, 412);
             this.editButton.Name = "editButton";
-            this.editButton.Size = new System.Drawing.Size(75, 23);
+            this.editButton.Size = new System.Drawing.Size(75, 36);
             this.editButton.TabIndex = 4;
             this.editButton.Text = "Edit";
             this.editButton.UseVisualStyleBackColor = true;
@@ -159,7 +163,7 @@
             // 
             this.deleteButton.Location = new System.Drawing.Point(258, 412);
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteButton.Size = new System.Drawing.Size(75, 36);
             this.deleteButton.TabIndex = 5;
             this.deleteButton.Text = "Delete";
             this.deleteButton.UseVisualStyleBackColor = true;
@@ -256,11 +260,35 @@
             this.label3.TabIndex = 14;
             this.label3.Text = "market price";
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.databaseStatusLabel,
+            this.internetStatusLabel});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 454);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(840, 22);
+            this.statusStrip1.TabIndex = 15;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // databaseStatusLabel
+            // 
+            this.databaseStatusLabel.Name = "databaseStatusLabel";
+            this.databaseStatusLabel.Size = new System.Drawing.Size(172, 17);
+            this.databaseStatusLabel.Text = "Dattabase Status: Disconnected";
+            // 
+            // internetStatusLabel
+            // 
+            this.internetStatusLabel.Name = "internetStatusLabel";
+            this.internetStatusLabel.Size = new System.Drawing.Size(191, 17);
+            this.internetStatusLabel.Text = "Internet Connection: Disconnected";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(840, 457);
+            this.ClientSize = new System.Drawing.Size(840, 476);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -278,6 +306,8 @@
             this.Name = "Form1";
             this.Text = "KeySuite";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -306,6 +336,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel databaseStatusLabel;
+        private System.Windows.Forms.ToolStripStatusLabel internetStatusLabel;
     }
 }
 
