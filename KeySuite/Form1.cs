@@ -22,6 +22,7 @@ namespace KeySuite
         {
             InitializeComponent();
             DatabaseUtils.fillTable(dataGridView1);
+            
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -32,6 +33,7 @@ namespace KeySuite
             {
                 string url = dataGridView1.Rows[currentRow].Cells[4].Value.ToString();
                 string price = PythonUtils.getSteamPrice(url);
+                marketPriceLabel.Text = price;
             }
         }
 
