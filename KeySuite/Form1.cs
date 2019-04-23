@@ -31,9 +31,24 @@ namespace KeySuite
 
             if (currentRow >= 0)
             {
-                string url = dataGridView1.Rows[currentRow].Cells[4].Value.ToString();
-                string price = PythonUtils.getSteamPrice(url);
-                marketPriceLabel.Text = price;
+                string steam_url = dataGridView1.Rows[currentRow].Cells[4].Value.ToString();
+                string g2a_url = dataGridView1.Rows[currentRow].Cells[5].Value.ToString();
+                string price = PythonUtils.getSteamPrice(steam_url);
+                string[] marketData = PythonUtils.getG2aData(g2a_url);
+
+                if(price != "forbidden")
+                    retailValueLabel.Text = price;
+
+                if(marketData[0] != "forbidden")
+                {
+                    keysOnMarketLabel.Text = marketData[0];
+                    marketPriceLabel.Text = marketData[1];
+                }
+                else
+                {
+                    keysOnMarketLabel.Text = "N/A";
+                    marketPriceLabel.Text = "N/A";
+                }
             }
         }
 
@@ -125,5 +140,7 @@ namespace KeySuite
 
             this.Enabled = false;
         }
+
+
     }
 }

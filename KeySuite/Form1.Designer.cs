@@ -44,6 +44,11 @@
             this.searchButton = new System.Windows.Forms.Button();
             this.categoryComboBox = new System.Windows.Forms.ComboBox();
             this.marketPriceLabel = new System.Windows.Forms.Label();
+            this.keysOnMarketLabel = new System.Windows.Forms.Label();
+            this.retailValueLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,7 +70,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(12, 41);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(776, 364);
+            this.dataGridView1.Size = new System.Drawing.Size(816, 364);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
@@ -197,17 +202,70 @@
             // marketPriceLabel
             // 
             this.marketPriceLabel.AutoSize = true;
-            this.marketPriceLabel.Location = new System.Drawing.Point(358, 421);
+            this.marketPriceLabel.Location = new System.Drawing.Point(592, 435);
             this.marketPriceLabel.Name = "marketPriceLabel";
-            this.marketPriceLabel.Size = new System.Drawing.Size(66, 13);
+            this.marketPriceLabel.Size = new System.Drawing.Size(65, 13);
             this.marketPriceLabel.TabIndex = 9;
-            this.marketPriceLabel.Text = "nothing here";
+            this.marketPriceLabel.Text = "market price";
+            // 
+            // keysOnMarketLabel
+            // 
+            this.keysOnMarketLabel.AutoSize = true;
+            this.keysOnMarketLabel.Location = new System.Drawing.Point(472, 435);
+            this.keysOnMarketLabel.Name = "keysOnMarketLabel";
+            this.keysOnMarketLabel.Size = new System.Drawing.Size(79, 13);
+            this.keysOnMarketLabel.TabIndex = 10;
+            this.keysOnMarketLabel.Text = "keys on market";
+            // 
+            // retailValueLabel
+            // 
+            this.retailValueLabel.AutoSize = true;
+            this.retailValueLabel.Location = new System.Drawing.Point(375, 435);
+            this.retailValueLabel.Name = "retailValueLabel";
+            this.retailValueLabel.Size = new System.Drawing.Size(58, 13);
+            this.retailValueLabel.TabIndex = 11;
+            this.retailValueLabel.Text = "retail value";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(360, 412);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 16);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "retail value";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(456, 412);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(120, 16);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "keys on market";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(582, 412);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(100, 16);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "market price";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(840, 457);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.retailValueLabel);
+            this.Controls.Add(this.keysOnMarketLabel);
             this.Controls.Add(this.marketPriceLabel);
             this.Controls.Add(this.categoryComboBox);
             this.Controls.Add(this.searchButton);
@@ -243,6 +301,11 @@
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.ComboBox categoryComboBox;
         private System.Windows.Forms.Label marketPriceLabel;
+        private System.Windows.Forms.Label keysOnMarketLabel;
+        private System.Windows.Forms.Label retailValueLabel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
 

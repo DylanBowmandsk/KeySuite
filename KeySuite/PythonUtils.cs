@@ -16,8 +16,6 @@ namespace KeySuite
 
         public static string getSteamPrice(string url)
         {
-      
-
             string progToRun = "..\\..\\steam_webscraper.py";
             
 
@@ -35,6 +33,26 @@ namespace KeySuite
 
             string price = output;
             return price;
+        }
+
+        public static string[] getG2aData(string url)
+        {
+            string progToRun = "..\\..\\g2a_webscraper.py";
+            char[] splitter = { '\r' };
+
+            Process proc = new Process();
+            proc.StartInfo.FileName = "python.exe";
+            proc.StartInfo.RedirectStandardOutput = true;
+            proc.StartInfo.UseShellExecute = false;
+
+
+            proc.StartInfo.Arguments = string.Concat(progToRun, " ", url);
+            proc.Start();
+
+            StreamReader sReader = proc.StandardOutput;
+            string[] data = sReader.ReadToEnd().Split(splitter);
+
+            return data;
         }
     }
 }
