@@ -192,6 +192,7 @@
             this.categoryComboBox.Name = "categoryComboBox";
             this.categoryComboBox.Size = new System.Drawing.Size(121, 21);
             this.categoryComboBox.TabIndex = 8;
+            this.categoryComboBox.SelectedIndex = 0;
             // 
             // Form1
             // 
