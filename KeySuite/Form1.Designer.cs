@@ -52,6 +52,8 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.databaseStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.internetStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.markdownLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -207,62 +209,68 @@
             // marketPriceLabel
             // 
             this.marketPriceLabel.AutoSize = true;
-            this.marketPriceLabel.Location = new System.Drawing.Point(592, 435);
+            this.marketPriceLabel.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.marketPriceLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.marketPriceLabel.Location = new System.Drawing.Point(635, 431);
             this.marketPriceLabel.Name = "marketPriceLabel";
-            this.marketPriceLabel.Size = new System.Drawing.Size(65, 13);
+            this.marketPriceLabel.Size = new System.Drawing.Size(112, 18);
             this.marketPriceLabel.TabIndex = 9;
             this.marketPriceLabel.Text = "market price";
             // 
             // keysOnMarketLabel
             // 
             this.keysOnMarketLabel.AutoSize = true;
-            this.keysOnMarketLabel.Location = new System.Drawing.Point(472, 435);
+            this.keysOnMarketLabel.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.keysOnMarketLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.keysOnMarketLabel.Location = new System.Drawing.Point(512, 430);
             this.keysOnMarketLabel.Name = "keysOnMarketLabel";
-            this.keysOnMarketLabel.Size = new System.Drawing.Size(79, 13);
+            this.keysOnMarketLabel.Size = new System.Drawing.Size(137, 18);
             this.keysOnMarketLabel.TabIndex = 10;
             this.keysOnMarketLabel.Text = "keys on market";
             // 
             // retailValueLabel
             // 
             this.retailValueLabel.AutoSize = true;
-            this.retailValueLabel.Location = new System.Drawing.Point(375, 435);
+            this.retailValueLabel.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.retailValueLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.retailValueLabel.Location = new System.Drawing.Point(394, 430);
             this.retailValueLabel.Name = "retailValueLabel";
-            this.retailValueLabel.Size = new System.Drawing.Size(58, 13);
+            this.retailValueLabel.Size = new System.Drawing.Size(99, 18);
             this.retailValueLabel.TabIndex = 11;
             this.retailValueLabel.Text = "retail value";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(360, 412);
+            this.label1.Location = new System.Drawing.Point(365, 412);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 16);
+            this.label1.Size = new System.Drawing.Size(86, 14);
             this.label1.TabIndex = 12;
-            this.label1.Text = "retail value";
+            this.label1.Text = "Retail Value";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(456, 412);
+            this.label2.Location = new System.Drawing.Point(479, 412);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 16);
+            this.label2.Size = new System.Drawing.Size(109, 14);
             this.label2.TabIndex = 13;
-            this.label2.Text = "keys on market";
+            this.label2.Text = "Keys on Market";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(582, 412);
+            this.label3.Location = new System.Drawing.Point(614, 412);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 16);
+            this.label3.Size = new System.Drawing.Size(91, 14);
             this.label3.TabIndex = 14;
-            this.label3.Text = "market price";
+            this.label3.Text = "Market Price";
             // 
             // statusStrip1
             // 
@@ -289,12 +297,36 @@
             this.internetStatusLabel.Size = new System.Drawing.Size(191, 17);
             this.internetStatusLabel.Text = "Internet Connection: Disconnected";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label4.Location = new System.Drawing.Point(727, 412);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(82, 14);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Mark Down";
+            // 
+            // markdownLabel
+            // 
+            this.markdownLabel.AutoSize = true;
+            this.markdownLabel.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.markdownLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.markdownLabel.Location = new System.Drawing.Point(753, 430);
+            this.markdownLabel.Name = "markdownLabel";
+            this.markdownLabel.Size = new System.Drawing.Size(27, 18);
+            this.markdownLabel.TabIndex = 17;
+            this.markdownLabel.Text = "%";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(840, 476);
+            this.Controls.Add(this.markdownLabel);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -346,6 +378,8 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel databaseStatusLabel;
         private System.Windows.Forms.ToolStripStatusLabel internetStatusLabel;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label markdownLabel;
     }
 }
 

@@ -43,11 +43,16 @@ namespace KeySuite
                 string price = PythonUtils.getSteamPrice(steam_url);
                 string[] marketData = PythonUtils.getG2aData(g2a_url);
 
-                if(price != "forbidden")
+                if(price != "forbidden" && price != "" && steam_url != null)
                     retailValueLabel.Text = price;
-
-                if(marketData[0] != "forbidden")
+                else
                 {
+                    retailValueLabel.Text = "N/A";
+                }
+
+                if(marketData[0] != "forbidden" && marketData[0] != "" && g2a_url != null)
+                {
+
                     keysOnMarketLabel.Text = marketData[0];
                     marketPriceLabel.Text = marketData[1];
                 }

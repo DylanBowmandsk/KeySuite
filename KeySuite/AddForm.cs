@@ -48,5 +48,10 @@ namespace KeySuite
             if (response == 0)
                 MessageBox.Show("Duplicate key");
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
