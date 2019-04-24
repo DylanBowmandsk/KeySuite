@@ -65,8 +65,8 @@ namespace KeySuite
                  proc.Start();
 
                  StreamReader sReader = proc.StandardOutput;
-                  data = sReader.ReadToEnd().Split(splitter);
-                 data[0] = "133";
+                 data = sReader.ReadToEnd().Split(splitter);
+                 
              });
 
             thread.Start();

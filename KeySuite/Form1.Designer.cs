@@ -161,6 +161,7 @@
             // 
             // deleteButton
             // 
+            this.deleteButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.deleteButton.Location = new System.Drawing.Point(258, 412);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(75, 36);
@@ -234,6 +235,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(360, 412);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 16);
@@ -244,6 +246,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label2.Location = new System.Drawing.Point(456, 412);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(120, 16);
@@ -254,6 +257,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label3.Location = new System.Drawing.Point(582, 412);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 16);
@@ -273,12 +277,14 @@
             // 
             // databaseStatusLabel
             // 
+            this.databaseStatusLabel.BackColor = System.Drawing.SystemColors.Control;
             this.databaseStatusLabel.Name = "databaseStatusLabel";
             this.databaseStatusLabel.Size = new System.Drawing.Size(168, 17);
             this.databaseStatusLabel.Text = "Database Status: Disconnected";
             // 
             // internetStatusLabel
             // 
+            this.internetStatusLabel.BackColor = System.Drawing.SystemColors.Control;
             this.internetStatusLabel.Name = "internetStatusLabel";
             this.internetStatusLabel.Size = new System.Drawing.Size(191, 17);
             this.internetStatusLabel.Text = "Internet Connection: Disconnected";
@@ -287,6 +293,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(840, 476);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.label3);
