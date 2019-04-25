@@ -30,7 +30,8 @@ namespace KeySuite
 
             if (DatabaseUtils.fillTable(dataGridView1))
                 databaseStatusLabel.Text = "Database Status: Connected";
-            
+
+            categoryComboBox.SelectedIndex = 0;
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)

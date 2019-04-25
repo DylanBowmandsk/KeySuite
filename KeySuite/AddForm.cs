@@ -38,7 +38,7 @@ namespace KeySuite
         private Boolean validateInput()
         {
             if (cdTextBox.Text.Length < 5)
-                MessageBox.Show("No CDkey entered");
+                MessageBox.Show("No CD key too short");
             else if (productTextBox.Text.Length == 0)
                 MessageBox.Show("No product entered");
             else if (supplierTextBox.Text.Length == 0)

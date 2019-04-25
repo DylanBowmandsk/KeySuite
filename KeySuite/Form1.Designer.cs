@@ -29,13 +29,6 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.cdkey = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.product = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.supplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.distributor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.steam_url = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.g2a_url = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.region = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addEntryButton = new System.Windows.Forms.Button();
             this.refreshButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
@@ -54,6 +47,13 @@
             this.internetStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.label4 = new System.Windows.Forms.Label();
             this.markdownLabel = new System.Windows.Forms.Label();
+            this.cdkey = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.product = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.supplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.distributor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.steam_url = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.g2a_url = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.region = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -73,62 +73,13 @@
             this.g2a_url,
             this.region});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 41);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 42);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(816, 364);
+            this.dataGridView1.Size = new System.Drawing.Size(817, 364);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
-            // 
-            // cdkey
-            // 
-            this.cdkey.DataPropertyName = "cdkey";
-            this.cdkey.HeaderText = "cdkey";
-            this.cdkey.Name = "cdkey";
-            this.cdkey.ReadOnly = true;
-            // 
-            // product
-            // 
-            this.product.DataPropertyName = "product";
-            this.product.HeaderText = "product";
-            this.product.Name = "product";
-            this.product.ReadOnly = true;
-            // 
-            // supplier
-            // 
-            this.supplier.DataPropertyName = "supplier";
-            this.supplier.HeaderText = "supplier";
-            this.supplier.Name = "supplier";
-            this.supplier.ReadOnly = true;
-            // 
-            // distributor
-            // 
-            this.distributor.DataPropertyName = "distributor";
-            this.distributor.HeaderText = "distributor";
-            this.distributor.Name = "distributor";
-            this.distributor.ReadOnly = true;
-            // 
-            // steam_url
-            // 
-            this.steam_url.DataPropertyName = "steam_url";
-            this.steam_url.HeaderText = "steam_url";
-            this.steam_url.Name = "steam_url";
-            this.steam_url.ReadOnly = true;
-            // 
-            // g2a_url
-            // 
-            this.g2a_url.DataPropertyName = "g2a_url";
-            this.g2a_url.HeaderText = "g2a_url";
-            this.g2a_url.Name = "g2a_url";
-            this.g2a_url.ReadOnly = true;
-            // 
-            // region
-            // 
-            this.region.DataPropertyName = "region";
-            this.region.HeaderText = "region";
-            this.region.Name = "region";
-            this.region.ReadOnly = true;
             // 
             // addEntryButton
             // 
@@ -323,6 +274,58 @@
             this.markdownLabel.TabIndex = 17;
             this.markdownLabel.Text = "%";
             // 
+            // cdkey
+            // 
+            this.cdkey.DataPropertyName = "cdkey";
+            this.cdkey.HeaderText = "cdkey";
+            this.cdkey.Name = "cdkey";
+            this.cdkey.ReadOnly = true;
+            this.cdkey.Width = 150;
+            // 
+            // product
+            // 
+            this.product.DataPropertyName = "product";
+            this.product.HeaderText = "product";
+            this.product.Name = "product";
+            this.product.ReadOnly = true;
+            this.product.Width = 150;
+            // 
+            // supplier
+            // 
+            this.supplier.DataPropertyName = "supplier";
+            this.supplier.HeaderText = "supplier";
+            this.supplier.Name = "supplier";
+            this.supplier.ReadOnly = true;
+            // 
+            // distributor
+            // 
+            this.distributor.DataPropertyName = "distributor";
+            this.distributor.HeaderText = "distributor";
+            this.distributor.Name = "distributor";
+            this.distributor.ReadOnly = true;
+            // 
+            // steam_url
+            // 
+            this.steam_url.DataPropertyName = "steam_url";
+            this.steam_url.HeaderText = "steam_url";
+            this.steam_url.Name = "steam_url";
+            this.steam_url.ReadOnly = true;
+            // 
+            // g2a_url
+            // 
+            this.g2a_url.DataPropertyName = "g2a_url";
+            this.g2a_url.HeaderText = "g2a_url";
+            this.g2a_url.Name = "g2a_url";
+            this.g2a_url.ReadOnly = true;
+            // 
+            // region
+            // 
+            this.region.DataPropertyName = "region";
+            this.region.HeaderText = "region";
+            this.region.Name = "region";
+            this.region.ReadOnly = true;
+            this.region.Width = 74;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -361,13 +364,6 @@
 
         public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button addEntryButton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cdkey;
-        private System.Windows.Forms.DataGridViewTextBoxColumn product;
-        private System.Windows.Forms.DataGridViewTextBoxColumn supplier;
-        private System.Windows.Forms.DataGridViewTextBoxColumn distributor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn steam_url;
-        private System.Windows.Forms.DataGridViewTextBoxColumn g2a_url;
-        private System.Windows.Forms.DataGridViewTextBoxColumn region;
         private System.Windows.Forms.Button refreshButton;
         private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.Button deleteButton;
@@ -385,6 +381,13 @@
         private System.Windows.Forms.ToolStripStatusLabel internetStatusLabel;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label markdownLabel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cdkey;
+        private System.Windows.Forms.DataGridViewTextBoxColumn product;
+        private System.Windows.Forms.DataGridViewTextBoxColumn supplier;
+        private System.Windows.Forms.DataGridViewTextBoxColumn distributor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn steam_url;
+        private System.Windows.Forms.DataGridViewTextBoxColumn g2a_url;
+        private System.Windows.Forms.DataGridViewTextBoxColumn region;
     }
 }
 
