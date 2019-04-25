@@ -57,7 +57,6 @@ namespace KeySuite
         private void removeEscapes(ref string input)
         {
             input = input.Replace("\r\n", "");
-            
         }
 
         private void setG2aPrice(string g2aPrice)

@@ -71,7 +71,7 @@ namespace KeySuite
             return response;
         }
 
-        public static int modifyEntry(EditForm form, string currentKey) {
+        public static int modifyEntry(Key key, string currentKey) {
 
             int response = 0;
 
@@ -80,13 +80,13 @@ namespace KeySuite
                 sqlcon.Open();
                 SqlCommand cmd = new SqlCommand("Update keys set cdkey = @cdkey, product = @product, supplier = @supplier," +
                     " distributor = @distributor, steam_url = @steam_url, g2a_url = @g2a_url, region = @region WHERE cdkey = @current ", sqlcon);
-                cmd.Parameters.AddWithValue("@cdkey", form.cdTextBox.Text);
-                cmd.Parameters.AddWithValue("@product", form.productTextBox.Text);
-                cmd.Parameters.AddWithValue("@supplier", form.supplierTextBox.Text);
-                cmd.Parameters.AddWithValue("@distributor", form.distributorTextBox.Text);
-                cmd.Parameters.AddWithValue("@steam_url", form.steamUrlTextBox.Text);
-                cmd.Parameters.AddWithValue("@g2a_url", form.g2aUrlTextBox.Text);
-                cmd.Parameters.AddWithValue("@region", form.regionTextBox.Text);
+                cmd.Parameters.AddWithValue("@cdkey", key.cdkey);
+                cmd.Parameters.AddWithValue("@product", key.product);
+                cmd.Parameters.AddWithValue("@supplier", key.supplier);
+                cmd.Parameters.AddWithValue("@distributor", key.distributor);
+                cmd.Parameters.AddWithValue("@steam_url", key.steam_url);
+                cmd.Parameters.AddWithValue("@g2a_url", key.g2a_url);
+                cmd.Parameters.AddWithValue("@region", key.region);
                 cmd.Parameters.AddWithValue("@current", currentKey);
                 response = cmd.ExecuteNonQuery();
             }

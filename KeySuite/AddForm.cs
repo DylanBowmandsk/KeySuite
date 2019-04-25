@@ -31,6 +31,31 @@ namespace KeySuite
 
         private void addButton_Click(object sender, EventArgs e)
         {
+            if (validateInput())
+                addEntry();
+        }
+
+        private Boolean validateInput()
+        {
+            if (cdTextBox.Text.Length < 5)
+                MessageBox.Show("No CDkey entered");
+            else if (productTextBox.Text.Length == 0)
+                MessageBox.Show("No product entered");
+            else if (supplierTextBox.Text.Length == 0)
+                MessageBox.Show("No supplier entered");
+            else if (distributorTextBox.Text.Length == 0)
+                MessageBox.Show("No distributor entered");
+            else if (regionTextBox.Text.Length == 0)
+                MessageBox.Show("No region entered");
+            else
+            {
+                return true;
+            }
+            return false;
+        }
+
+        private int addEntry()
+        {
             int response;
             Key key = new Key(cdTextBox.Text,
                 productTextBox.Text,
@@ -40,18 +65,18 @@ namespace KeySuite
                 g2aUrlTextBox.Text,
                 regionTextBox.Text);
             response = DatabaseUtils.insertEntry(key);
-            if (response > 0)
+            if (response == 0)
+            {
+                MessageBox.Show("Duplicate key");
+                return response;
+            }
+            else
             {
                 this.Close();
                 DatabaseUtils.fillTable(root.dataGridView1);
+                return response;
             }
-            if (response == 0)
-                MessageBox.Show("Duplicate key");
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            
         }
     }
 }

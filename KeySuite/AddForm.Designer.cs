@@ -203,7 +203,6 @@
             this.addKeyDescriptionLabel.Size = new System.Drawing.Size(158, 13);
             this.addKeyDescriptionLabel.TabIndex = 17;
             this.addKeyDescriptionLabel.Text = "Add a key to the database";
-            this.addKeyDescriptionLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // AddForm
             // 

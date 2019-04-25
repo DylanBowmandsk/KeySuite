@@ -32,10 +32,45 @@ namespace KeySuite
 
         private void confirmButton_Click(object sender, EventArgs e)
         {
-            int response = DatabaseUtils.modifyEntry(this,currentKey.cdkey);
+            if (validateInput())
+                editEntry();
+        }
+
+        private int editEntry()
+        {
+            Key key = new Key(cdTextBox.Text,
+            productTextBox.Text,
+            supplierTextBox.Text,
+            distributorTextBox.Text,
+            steamUrlTextBox.Text,
+            g2aUrlTextBox.Text,
+            regionTextBox.Text);
+            int response = DatabaseUtils.modifyEntry(key, currentKey.cdkey);
             if (response > 0)
+            {
                 DatabaseUtils.fillTable(root.dataGridView1);
+            }
             this.Close();
+            return response;
+        }
+
+            private bool validateInput()
+        {
+            if (cdTextBox.Text.Length < 5)
+                MessageBox.Show("No CDkey entered");
+            else if (productTextBox.Text.Length == 0)
+                MessageBox.Show("No product entered");
+            else if (supplierTextBox.Text.Length == 0)
+                MessageBox.Show("No supplier entered");
+            else if (distributorTextBox.Text.Length == 0)
+                MessageBox.Show("No distributor entered");
+            else if (regionTextBox.Text.Length == 0)
+                MessageBox.Show("No region entered");
+            else
+            {
+                return true;
+            }
+            return false;
         }
 
         private void EditForm_FormClosed(object sender, FormClosedEventArgs e)
