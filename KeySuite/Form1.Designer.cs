@@ -208,36 +208,34 @@
             // 
             // marketPriceLabel
             // 
-            this.marketPriceLabel.AutoSize = true;
             this.marketPriceLabel.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.marketPriceLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.marketPriceLabel.Location = new System.Drawing.Point(635, 431);
+            this.marketPriceLabel.Location = new System.Drawing.Point(624, 430);
             this.marketPriceLabel.Name = "marketPriceLabel";
-            this.marketPriceLabel.Size = new System.Drawing.Size(112, 18);
+            this.marketPriceLabel.Size = new System.Drawing.Size(68, 18);
             this.marketPriceLabel.TabIndex = 9;
-            this.marketPriceLabel.Text = "market price";
             // 
             // keysOnMarketLabel
             // 
             this.keysOnMarketLabel.AutoSize = true;
             this.keysOnMarketLabel.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.keysOnMarketLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.keysOnMarketLabel.Location = new System.Drawing.Point(512, 430);
+            this.keysOnMarketLabel.Location = new System.Drawing.Point(516, 430);
+            this.keysOnMarketLabel.MaximumSize = new System.Drawing.Size(200, 200);
             this.keysOnMarketLabel.Name = "keysOnMarketLabel";
-            this.keysOnMarketLabel.Size = new System.Drawing.Size(137, 18);
+            this.keysOnMarketLabel.Size = new System.Drawing.Size(0, 18);
             this.keysOnMarketLabel.TabIndex = 10;
-            this.keysOnMarketLabel.Text = "keys on market";
             // 
             // retailValueLabel
             // 
             this.retailValueLabel.AutoSize = true;
             this.retailValueLabel.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.retailValueLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.retailValueLabel.Location = new System.Drawing.Point(394, 430);
+            this.retailValueLabel.Location = new System.Drawing.Point(372, 430);
+            this.retailValueLabel.MaximumSize = new System.Drawing.Size(200, 200);
             this.retailValueLabel.Name = "retailValueLabel";
-            this.retailValueLabel.Size = new System.Drawing.Size(99, 18);
+            this.retailValueLabel.Size = new System.Drawing.Size(0, 18);
             this.retailValueLabel.TabIndex = 11;
-            this.retailValueLabel.Text = "retail value";
             // 
             // label1
             // 
@@ -274,14 +272,15 @@
             // 
             // statusStrip1
             // 
+            this.statusStrip1.AutoSize = false;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.databaseStatusLabel,
             this.internetStatusLabel});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 454);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 461);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(840, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(841, 22);
             this.statusStrip1.TabIndex = 15;
-            this.statusStrip1.Text = "statusStrip1";
+            this.statusStrip1.Text = "20";
             // 
             // databaseStatusLabel
             // 
@@ -324,7 +323,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
-            this.ClientSize = new System.Drawing.Size(840, 476);
+            this.ClientSize = new System.Drawing.Size(841, 483);
             this.Controls.Add(this.markdownLabel);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.statusStrip1);
@@ -344,6 +343,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form1";
             this.Text = "KeySuite";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();

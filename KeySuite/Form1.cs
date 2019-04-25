@@ -13,6 +13,7 @@ using IronPython.Runtime;
 using IronPython.Hosting;
 using System.Net;
 using System.Threading;
+using System.Text.RegularExpressions;
 
 namespace KeySuite
 {
@@ -40,30 +41,39 @@ namespace KeySuite
             {
                 string steam_url = dataGridView1.Rows[currentRow].Cells[4].Value.ToString();
                 string g2a_url = dataGridView1.Rows[currentRow].Cells[5].Value.ToString();
-                string price = PythonUtils.getSteamPrice(steam_url);
-                string[] marketData = PythonUtils.getG2aData(g2a_url);
+                string steamPrice = PythonUtils.getSteamPrice(steam_url);
+                string g2aKeys = PythonUtils.getG2aKeysData(g2a_url);
+                string g2aPrice = PythonUtils.getG2aPrice(g2a_url);
+                setSteamValue(steamPrice);
 
-                if(price != "forbidden" && price != "" && steam_url != null)
-                    retailValueLabel.Text = price;
-                else
-                {
-                    retailValueLabel.Text = "N/A";
-                }
+                setG2aKeys(g2aKeys);
 
-                if(marketData[0] != "forbidden" && marketData[0] != "" && g2a_url != null)
-                {
+                setG2aPrice(g2aPrice);
 
-                    keysOnMarketLabel.Text = marketData[0];
-                    marketPriceLabel.Text = marketData[1];
-                }
-                else
-                {
-                    keysOnMarketLabel.Text = "N/A";
-                    marketPriceLabel.Text = "N/A";
-                }
             }
         }
 
+        private void setG2aPrice(string g2aPrice)
+        {
+            if (g2aPrice != "")
+                marketPriceLabel.Text = g2aPrice;
+        }
+
+        private void setG2aKeys(string g2aKeys)
+        {
+            if (g2aKeys != "")
+                keysOnMarketLabel.Text = g2aKeys;
+        }
+
+        private void setSteamValue(string steamPrice)
+        {
+            if (steamPrice != "forbidden" && steamPrice != "")
+                retailValueLabel.Text = steamPrice;
+            else
+            {
+                retailValueLabel.Text = "£0";
+            }
+        }
 
         private void addEntryButton_Click(object sender, EventArgs e)
         {
@@ -167,6 +177,11 @@ namespace KeySuite
             {
                 return false;
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
