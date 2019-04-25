@@ -163,7 +163,7 @@
             // 
             this.regionTextBox.Location = new System.Drawing.Point(105, 191);
             this.regionTextBox.Name = "regionTextBox";
-            this.regionTextBox.Size = new System.Drawing.Size(59, 20);
+            this.regionTextBox.Size = new System.Drawing.Size(75, 20);
             this.regionTextBox.TabIndex = 14;
             // 
             // cancelButton

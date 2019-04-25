@@ -208,38 +208,47 @@
             // 
             // marketPriceLabel
             // 
+            this.marketPriceLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.marketPriceLabel.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.marketPriceLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.marketPriceLabel.Location = new System.Drawing.Point(624, 430);
+            this.marketPriceLabel.Location = new System.Drawing.Point(617, 430);
             this.marketPriceLabel.Name = "marketPriceLabel";
-            this.marketPriceLabel.Size = new System.Drawing.Size(68, 18);
+            this.marketPriceLabel.Size = new System.Drawing.Size(88, 18);
             this.marketPriceLabel.TabIndex = 9;
+            this.marketPriceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // keysOnMarketLabel
             // 
-            this.keysOnMarketLabel.AutoSize = true;
+            this.keysOnMarketLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.keysOnMarketLabel.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.keysOnMarketLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.keysOnMarketLabel.Location = new System.Drawing.Point(516, 430);
+            this.keysOnMarketLabel.Location = new System.Drawing.Point(482, 430);
             this.keysOnMarketLabel.MaximumSize = new System.Drawing.Size(200, 200);
             this.keysOnMarketLabel.Name = "keysOnMarketLabel";
-            this.keysOnMarketLabel.Size = new System.Drawing.Size(0, 18);
+            this.keysOnMarketLabel.Size = new System.Drawing.Size(106, 18);
             this.keysOnMarketLabel.TabIndex = 10;
+            this.keysOnMarketLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // retailValueLabel
             // 
-            this.retailValueLabel.AutoSize = true;
+            this.retailValueLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.retailValueLabel.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.retailValueLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.retailValueLabel.Location = new System.Drawing.Point(372, 430);
+            this.retailValueLabel.Location = new System.Drawing.Point(366, 430);
             this.retailValueLabel.MaximumSize = new System.Drawing.Size(200, 200);
             this.retailValueLabel.Name = "retailValueLabel";
-            this.retailValueLabel.Size = new System.Drawing.Size(0, 18);
+            this.retailValueLabel.Size = new System.Drawing.Size(83, 18);
             this.retailValueLabel.TabIndex = 11;
+            this.retailValueLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(365, 412);
@@ -250,7 +259,6 @@
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label2.Location = new System.Drawing.Point(479, 412);
@@ -261,7 +269,6 @@
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label3.Location = new System.Drawing.Point(614, 412);
@@ -298,7 +305,6 @@
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label4.Location = new System.Drawing.Point(727, 412);
@@ -309,7 +315,6 @@
             // 
             // markdownLabel
             // 
-            this.markdownLabel.AutoSize = true;
             this.markdownLabel.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.markdownLabel.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.markdownLabel.Location = new System.Drawing.Point(753, 430);

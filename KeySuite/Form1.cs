@@ -44,25 +44,36 @@ namespace KeySuite
                 string steamPrice = PythonUtils.getSteamPrice(steam_url);
                 string g2aKeys = PythonUtils.getG2aKeysData(g2a_url);
                 string g2aPrice = PythonUtils.getG2aPrice(g2a_url);
+                removeEscapes(ref steamPrice);
+                removeEscapes(ref g2aKeys);
+                removeEscapes(ref g2aPrice);
                 setSteamValue(steamPrice);
-
                 setG2aKeys(g2aKeys);
-
                 setG2aPrice(g2aPrice);
 
             }
+        }
+
+        private void removeEscapes(ref string input)
+        {
+            input = input.Replace("\r\n", "");
+            
         }
 
         private void setG2aPrice(string g2aPrice)
         {
             if (g2aPrice != "")
                 marketPriceLabel.Text = g2aPrice;
-        }
+            else
+                marketPriceLabel.Text = "N/A";
+        }   
 
         private void setG2aKeys(string g2aKeys)
         {
             if (g2aKeys != "")
                 keysOnMarketLabel.Text = g2aKeys;
+            else
+                keysOnMarketLabel.Text = "N/A";
         }
 
         private void setSteamValue(string steamPrice)
@@ -71,7 +82,7 @@ namespace KeySuite
                 retailValueLabel.Text = steamPrice;
             else
             {
-                retailValueLabel.Text = "£0";
+                retailValueLabel.Text = "N/A";
             }
         }
 
