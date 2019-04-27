@@ -18,32 +18,21 @@ namespace KeySuite
         public static string getSteamPrice(string url)
         {
             string price = null;
-
-
-                  price = new SteamPriceWebscraper(url).WebScrape();
-
-
+            price = new SteamPriceWebscraper(url).WebScrape();
             return price;
         }
 
         public static string getG2aKeysData(string url)
         {
             string keys = null;
-
-    
-                keys = new G2aKeyWebscraper(url).WebScrape();
- 
+            keys = new G2aKeyWebscraper(url).WebScrape();
             return keys;
         }
 
         public static string getG2aPrice(string url)
         {
             string price = null;
-
-  
-                price = new G2aPriceWebscraper(url).WebScrape();
-   
-
+            price = new G2aPriceWebscraper(url).WebScrape();
             return price;
         }
     }

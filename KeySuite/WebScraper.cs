@@ -12,8 +12,8 @@ namespace KeySuite
 {
     class WebScraper
     {
-        public string progToRun = null;
-        public string url = null;
+        public string progToRun { get; set; }
+        public string url { get; set; }
         private Process proc = new Process();
 
        public void initialise()

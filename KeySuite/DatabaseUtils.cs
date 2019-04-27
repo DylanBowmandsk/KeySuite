@@ -11,8 +11,19 @@ namespace KeySuite
 {
     class DatabaseUtils
     {
+        /// <summary>
+        /// the main string used to connect to the database
+        /// for info on connection strings see https://www.connectionstrings.com/sql-server/
+        /// for example for this one to work the user must have a sqlserver
+        /// with a trusted connection login and a database called KeySuite
+        /// </summary>
         private static  string connectionString = @"Data Source=localhost;Initial Catalog=KeySuite;Integrated Security=True";
-
+        
+        /// <summary>
+        /// populates the elements of the table
+        /// </summary>
+        /// <param name="gridView">the main forms dataGridView</param>
+        /// <returns>returns true if a connection is open and false if not</returns>
         public static bool fillTable(DataGridView gridView)
         {
             try { 
@@ -26,12 +37,18 @@ namespace KeySuite
                     return true;
                 }
             }
-            catch(DataException e)
+            catch(SqlException e)
             {
                 return false;
             }
         }
 
+        /// <summary>
+        /// searches the database table and updates the main DataGridView with results
+        /// </summary>
+        /// <param name="gridView">the main forms dataGridView</param>
+        /// <param name="searchTerm">the term the user is searching for...duh</param>
+        /// <param name="category">which part of the table the search term is compared to</param>
         public static void searchTable(DataGridView gridView,string searchTerm,string category)
         {
             using (SqlConnection sqlcon = new SqlConnection(connectionString))
@@ -44,10 +61,17 @@ namespace KeySuite
             }
         }
 
+        /// <summary>
+        /// inserts a value to the database from the addForm
+        /// </summary>
+        /// <param name="key">the Key object generetaed from the data input in the Addform</param>
+        /// <returns>
+        /// if the return is 1 an entry has been made
+        /// if the return is 0 a key is duplicate
+        /// </returns>
         public static int insertEntry(Key key)
         {
             int response;
-
             try
             {
                 using (SqlConnection sqlcon = new SqlConnection(connectionString))
@@ -64,16 +88,24 @@ namespace KeySuite
                     response = cmd.ExecuteNonQuery();
                 }
             }
-            catch(DataException e)
+            catch(SqlException e)
             {
                 response = 0;
             }
-            
             return response;
         }
 
-        public static int modifyEntry(Key key, string currentKey) {
-
+        /// <summary>
+        /// modifies a current listing in the database with updated data from the EditForm
+        /// </summary>
+        /// <param name="key">the new key data being updated</param>
+        /// <param name="currentKey">the current key to be searched for in the database for the set command</param>
+        /// <returns>
+        /// returns 1 if an entry was updated
+        /// returns 0 if not
+        /// </returns>
+        public static int modifyEntry(Key key, string currentKey)
+        {
             int response;
             try
             {
@@ -93,13 +125,22 @@ namespace KeySuite
                     response = cmd.ExecuteNonQuery();
                 }
             }
-            catch(DataException e)
+            catch(SqlException e)
             {
                 response = 0;
             }
 
             return response;
         }
+
+        /// <summary>
+        /// deletes an entry from the database
+        /// </summary>
+        /// <param name="current">the current key user for the delete claus</param>
+        /// <returns>
+        /// returns 1 if deletion was successful
+        /// return 0 if not
+        /// </returns>
         public static int deleteEntry(string current) 
         {
             int response;
