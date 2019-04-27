@@ -8,6 +8,10 @@ namespace KeySuite
 {
     class SteamPriceWebscraper : WebScraper
     {
+        /// <summary>
+        /// sets script to run
+        /// </summary>
+        /// <param name="url">url to scrape</param>
         public SteamPriceWebscraper(string url)
         {
             base.progToRun = "..\\..\\steam_webscraper.py";

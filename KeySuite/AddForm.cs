@@ -43,6 +43,7 @@ namespace KeySuite
         /// </summary>
         private int addEntry()
         {
+            //instance of Key class generated
             int response;
             Key key = new Key(cdTextBox.Text,
                 productTextBox.Text,
@@ -51,7 +52,9 @@ namespace KeySuite
                 steamUrlTextBox.Text,
                 g2aUrlTextBox.Text,
                 regionTextBox.Text);
+
             response = DatabaseUtils.insertEntry(key);
+
             if (response == 0)
             {
                 MessageBox.Show("Duplicate key");

@@ -10,13 +10,22 @@ using System.Threading;
 
 namespace KeySuite
 {
+    /// <summary>
+    /// Parent class for webscraper children
+    /// </summary>
     class WebScraper
     {
+        //variable holds what scipt to run
         public string progToRun { get; set; }
+        //url for script to load
         public string url { get; set; }
+        //host python process
         private Process proc = new Process();
 
-       public void initialise()
+        /// <summary>
+        /// initialises the process values
+        /// </summary>
+        public void initialise()
         { 
             proc.StartInfo.FileName = "pythonw.exe";
             proc.StartInfo.RedirectStandardOutput = true;
@@ -24,11 +33,19 @@ namespace KeySuite
             proc.StartInfo.Arguments = string.Concat(progToRun, " ", url);
         }
 
+        /// <summary>
+        /// sets url for script to load
+        /// </summary>
+        /// <param name="url"></param>
         public void setUrl(string url)
         {
             this.url = url;
         }
 
+        /// <summary>
+        /// scrapes the web for data
+        /// </summary>
+        /// <returns>scraped data</returns>
         public string WebScrape()
         {
             proc.Start();

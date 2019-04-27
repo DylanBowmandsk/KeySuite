@@ -54,6 +54,7 @@ namespace KeySuite
         /// </summary>
         private void editEntry()
         {
+            //instance of Key class generated
             Key key = new Key(cdTextBox.Text,
             productTextBox.Text,
             supplierTextBox.Text,
@@ -61,7 +62,9 @@ namespace KeySuite
             steamUrlTextBox.Text,
             g2aUrlTextBox.Text,
             regionTextBox.Text);
+
             int response = DatabaseUtils.modifyEntry(key, currentKey.cdkey);
+
             if (response > 0)
             {
                 DatabaseUtils.fillTable(root.dataGridView1);
