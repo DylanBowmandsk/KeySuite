@@ -63,6 +63,7 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cdkey,
@@ -296,8 +297,8 @@
             // 
             this.databaseStatusLabel.BackColor = System.Drawing.SystemColors.Control;
             this.databaseStatusLabel.Name = "databaseStatusLabel";
-            this.databaseStatusLabel.Size = new System.Drawing.Size(168, 17);
-            this.databaseStatusLabel.Text = "Database Status: Disconnected";
+            this.databaseStatusLabel.Size = new System.Drawing.Size(177, 17);
+            this.databaseStatusLabel.Text = "Database Status: Disconnected\\t";
             // 
             // internetStatusLabel
             // 
@@ -326,7 +327,7 @@
             this.markdownLabel.TabIndex = 17;
             this.markdownLabel.Text = "%";
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -349,7 +350,9 @@
             this.Controls.Add(this.refreshButton);
             this.Controls.Add(this.addEntryButton);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "Form1";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
+            this.Name = "MainForm";
             this.Text = "KeySuite";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.statusStrip1.ResumeLayout(false);

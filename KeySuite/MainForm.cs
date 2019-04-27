@@ -28,15 +28,26 @@ namespace KeySuite
         /// constructor for MainForm
         /// checks for internet connection and updates status bar
         /// fills datagridview with database rows and updates status bar
+        /// disables buttons of database is not connected
         /// sets the default of the combobox selector
         /// </summary>
         public MainForm()
         {
             InitializeComponent();
             if (CheckForInternetConnection() == true)
-                internetStatusLabel.Text = "Internet Connection: Connected";
+                internetStatusLabel.Text = "Internet Connection: Connected\t";
             if (DatabaseUtils.fillTable(dataGridView1))
-                databaseStatusLabel.Text = "Database Status: Connected";
+                databaseStatusLabel.Text = "Database Status: Connected\t";
+            else
+            {
+                searchBox.Enabled = false;
+                searchButton.Enabled = false;
+                addEntryButton.Enabled = false;
+                editButton.Enabled = false;
+                refreshButton.Enabled = false;
+                deleteButton.Enabled = false;
+                MessageBox.Show("No database connection\nRead manual and make sure settings are configured properly");
+            }
 
             categoryComboBox.SelectedIndex = 0;
         }
@@ -234,24 +245,26 @@ namespace KeySuite
         /// </summary>
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            string currentKey = dataGridView1.Rows[currentRow].Cells[0].Value.ToString();
-            string product = dataGridView1.Rows[currentRow].Cells[1].Value.ToString();
-            string supplier = dataGridView1.Rows[currentRow].Cells[2].Value.ToString();
-            string distributor = dataGridView1.Rows[currentRow].Cells[3].Value.ToString();
-            string steam_url = dataGridView1.Rows[currentRow].Cells[4].Value.ToString();
-            string g2a_url = dataGridView1.Rows[currentRow].Cells[5].Value.ToString();
-            string region = dataGridView1.Rows[currentRow].Cells[6].Value.ToString();
+            if(currentRow > 0) { 
+                string currentKey = dataGridView1.Rows[currentRow].Cells[0].Value.ToString();
+                string product = dataGridView1.Rows[currentRow].Cells[1].Value.ToString();
+                string supplier = dataGridView1.Rows[currentRow].Cells[2].Value.ToString();
+                string distributor = dataGridView1.Rows[currentRow].Cells[3].Value.ToString();
+                string steam_url = dataGridView1.Rows[currentRow].Cells[4].Value.ToString();
+                string g2a_url = dataGridView1.Rows[currentRow].Cells[5].Value.ToString();
+                string region = dataGridView1.Rows[currentRow].Cells[6].Value.ToString();
 
-            EditForm editForm = new EditForm(this, new Key(currentKey,
-                product,
-                supplier,
-                distributor,
-                steam_url,
-                g2a_url,
-                region));
-            editForm.Show();
+                EditForm editForm = new EditForm(this, new Key(currentKey,
+                    product,
+                    supplier,
+                    distributor,
+                    steam_url,
+                    g2a_url,
+                    region));
+                editForm.Show();
 
-            this.Enabled = false;
+                this.Enabled = false;
+            }
         }
 
         /// <summary>
