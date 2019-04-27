@@ -26,7 +26,7 @@ namespace KeySuite
                     return true;
                 }
             }
-            catch
+            catch(DataException e)
             {
                 return false;
             }
@@ -46,9 +46,10 @@ namespace KeySuite
 
         public static int insertEntry(Key key)
         {
-            int response = 0;
+            int response;
 
-            try { 
+            try
+            {
                 using (SqlConnection sqlcon = new SqlConnection(connectionString))
                 {
                     sqlcon.Open();
@@ -63,7 +64,7 @@ namespace KeySuite
                     response = cmd.ExecuteNonQuery();
                 }
             }
-            catch(Exception e)
+            catch(DataException e)
             {
                 response = 0;
             }
@@ -73,36 +74,49 @@ namespace KeySuite
 
         public static int modifyEntry(Key key, string currentKey) {
 
-            int response = 0;
-
-            using (SqlConnection sqlcon = new SqlConnection(connectionString))
+            int response;
+            try
             {
-                sqlcon.Open();
-                SqlCommand cmd = new SqlCommand("Update keys set cdkey = @cdkey, product = @product, supplier = @supplier," +
-                    " distributor = @distributor, steam_url = @steam_url, g2a_url = @g2a_url, region = @region WHERE cdkey = @current ", sqlcon);
-                cmd.Parameters.AddWithValue("@cdkey", key.cdkey);
-                cmd.Parameters.AddWithValue("@product", key.product);
-                cmd.Parameters.AddWithValue("@supplier", key.supplier);
-                cmd.Parameters.AddWithValue("@distributor", key.distributor);
-                cmd.Parameters.AddWithValue("@steam_url", key.steam_url);
-                cmd.Parameters.AddWithValue("@g2a_url", key.g2a_url);
-                cmd.Parameters.AddWithValue("@region", key.region);
-                cmd.Parameters.AddWithValue("@current", currentKey);
-                response = cmd.ExecuteNonQuery();
+                using (SqlConnection sqlcon = new SqlConnection(connectionString))
+                {
+                    sqlcon.Open();
+                    SqlCommand cmd = new SqlCommand("Update keys set cdkey = @cdkey, product = @product, supplier = @supplier," +
+                        " distributor = @distributor, steam_url = @steam_url, g2a_url = @g2a_url, region = @region WHERE cdkey = @current ", sqlcon);
+                    cmd.Parameters.AddWithValue("@cdkey", key.cdkey);
+                    cmd.Parameters.AddWithValue("@product", key.product);
+                    cmd.Parameters.AddWithValue("@supplier", key.supplier);
+                    cmd.Parameters.AddWithValue("@distributor", key.distributor);
+                    cmd.Parameters.AddWithValue("@steam_url", key.steam_url);
+                    cmd.Parameters.AddWithValue("@g2a_url", key.g2a_url);
+                    cmd.Parameters.AddWithValue("@region", key.region);
+                    cmd.Parameters.AddWithValue("@current", currentKey);
+                    response = cmd.ExecuteNonQuery();
+                }
+            }
+            catch(DataException e)
+            {
+                response = 0;
             }
 
             return response;
         }
         public static int deleteEntry(string current) 
         {
-            int response = 0;
+            int response;
 
-            using (SqlConnection sqlcon = new SqlConnection(connectionString))
+            try
             {
-                sqlcon.Open();
-                SqlCommand cmd = new SqlCommand("delete from keys where cdkey = @current", sqlcon);
-                cmd.Parameters.AddWithValue("@current", current);
-                response = cmd.ExecuteNonQuery();
+                using (SqlConnection sqlcon = new SqlConnection(connectionString))
+                {
+                    sqlcon.Open();
+                    SqlCommand cmd = new SqlCommand("delete from keys where cdkey = @current", sqlcon);
+                    cmd.Parameters.AddWithValue("@current", current);
+                    response = cmd.ExecuteNonQuery();
+                }
+            }
+            catch
+            {
+                response = 0;
             }
             return response;
         }

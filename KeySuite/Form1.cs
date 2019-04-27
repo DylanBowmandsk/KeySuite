@@ -48,6 +48,7 @@ namespace KeySuite
                 removeEscapes(ref steamPrice);
                 removeEscapes(ref g2aKeys);
                 removeEscapes(ref g2aPrice);
+                getMarkdown(steamPrice, g2aPrice);
                 setSteamValue(steamPrice);
                 setG2aKeys(g2aKeys);
                 setG2aPrice(g2aPrice);
@@ -55,9 +56,21 @@ namespace KeySuite
             }
         }
 
+        private void getMarkdown(string steamPrice, string g2aPrice)
+        {
+            if(Double.TryParse(steamPrice, out double steamDouble) &&
+                Double.TryParse(g2aPrice, out double g2aDouble))
+            {
+                double result = g2aDouble / steamDouble;
+                if (result < 0)
+                    markdownLabel.Text = result.ToString();
+            }
+        }
+
         private void removeEscapes(ref string input)
         {
             input = input.Replace("\r\n", "");
+            input = input.Replace("£","");
         }
 
         private void setG2aPrice(string g2aPrice)

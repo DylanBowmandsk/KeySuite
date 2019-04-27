@@ -22,22 +22,7 @@ namespace KeySuite
             var thread = new Thread(
               () =>
               {
-                  string progToRun = "..\\..\\steam_webscraper.py";
-
-
-                  Process proc = new Process();
-                  proc.StartInfo.FileName = "pythonw.exe";
-                  proc.StartInfo.RedirectStandardOutput = true;
-                  proc.StartInfo.UseShellExecute = false;
-
-
-                  proc.StartInfo.Arguments = string.Concat(progToRun, " ", url);
-                  proc.Start();
-
-                  StreamReader sReader = proc.StandardOutput;
-                  string output = sReader.ReadToEnd();
-
-                  price = output;
+                  price = new SteamPriceWebscraper(url).WebScrape();
               });
 
             thread.Start();
@@ -48,35 +33,22 @@ namespace KeySuite
 
         public static string getG2aKeysData(string url)
         {
-            string data = null;
+            string keys = null;
             var thread = new Thread(
             () =>
             {
-                string progToRun = "..\\..\\g2akeys_webscraper.py";
-
-                Process proc = new Process();
-                proc.StartInfo.FileName = "pythonw.exe";
-                proc.StartInfo.RedirectStandardOutput = true;
-                proc.StartInfo.UseShellExecute = false;
-
-
-                proc.StartInfo.Arguments = string.Concat(progToRun, " ", url);
-                proc.Start();
-
-                StreamReader sReader = proc.StandardOutput;
-                data = sReader.ReadToEnd();
-
+                keys = new G2aKeyWebscraper(url).WebScrape();
             });
 
             thread.Start();
             thread.Join();
 
-            return data;
+            return keys;
         }
 
         public static string getG2aPrice(string url)
         {
-            string data = null;
+            string price = null;
             var thread = new Thread(
             () =>
             {
@@ -92,14 +64,14 @@ namespace KeySuite
                 proc.Start();
 
                 StreamReader sReader = proc.StandardOutput;
-                data = sReader.ReadToEnd();
+                price = sReader.ReadToEnd();
 
             });
 
             thread.Start();
             thread.Join();
 
-            return data;
+            return price;
         }
     }
 }
