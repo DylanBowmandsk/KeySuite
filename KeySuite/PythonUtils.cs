@@ -19,14 +19,9 @@ namespace KeySuite
         {
             string price = null;
 
-            var thread = new Thread(
-              () =>
-              {
-                  price = new SteamPriceWebscraper(url).WebScrape();
-              });
 
-            thread.Start();
-            thread.Join();
+                  price = new SteamPriceWebscraper(url).WebScrape();
+
 
             return price;
         }
@@ -34,42 +29,20 @@ namespace KeySuite
         public static string getG2aKeysData(string url)
         {
             string keys = null;
-            var thread = new Thread(
-            () =>
-            {
+
+    
                 keys = new G2aKeyWebscraper(url).WebScrape();
-            });
-
-            thread.Start();
-            thread.Join();
-
+ 
             return keys;
         }
 
         public static string getG2aPrice(string url)
         {
             string price = null;
-            var thread = new Thread(
-            () =>
-            {
-                string progToRun = "..\\..\\g2aprice_webscraper.py";
 
-                Process proc = new Process();
-                proc.StartInfo.FileName = "pythonw.exe";
-                proc.StartInfo.RedirectStandardOutput = true;
-                proc.StartInfo.UseShellExecute = false;
-
-
-                proc.StartInfo.Arguments = string.Concat(progToRun, " ", url);
-                proc.Start();
-
-                StreamReader sReader = proc.StandardOutput;
-                price = sReader.ReadToEnd();
-
-            });
-
-            thread.Start();
-            thread.Join();
+  
+                price = new G2aPriceWebscraper(url).WebScrape();
+   
 
             return price;
         }

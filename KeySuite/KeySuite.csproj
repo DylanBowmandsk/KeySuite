@@ -86,6 +86,8 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="G2aKeyWebscraper.cs" />
+    <Compile Include="G2aPriceWebscraper.cs" />
     <Compile Include="Key.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

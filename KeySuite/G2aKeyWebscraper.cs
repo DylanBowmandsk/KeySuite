@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace KeySuite
 {
-    class G2aKeyWebscraper
+    class G2aKeyWebscraper : WebScraper
     {
+        public G2aKeyWebscraper(string url)
+        {
+            base.progToRun = "..\\..\\g2akeys_webscraper.py";
+            base.url = url;
+            base.initialise();
+        }
     }
 }
