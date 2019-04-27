@@ -12,48 +12,35 @@ namespace KeySuite
 {
     public partial class AddForm : Form
     {
-        public Form1 root { get;}
-        public AddForm(Form1 root)
+
+        /// only get is available within the class for the calling form
+        private MainForm root { get;}
+
+        /// <summary>
+        /// constructor for AddForm class
+        /// </summary>
+        /// <param name="root">the preceeding calling form</param>
+        public AddForm(MainForm root)
         {
             this.root = root;
             InitializeComponent();
         }
 
-        private void AddForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            root.Enabled = true;
-        }
 
-        private void cancelButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
+        /// <summary>
+        /// if validateInput method returns true editEntry is called
+        /// </summary>
         private void addButton_Click(object sender, EventArgs e)
         {
             if (validateInput())
                 addEntry();
         }
 
-        private Boolean validateInput()
-        {
-            if (cdTextBox.Text.Length < 5)
-                MessageBox.Show("No CD key too short");
-            else if (productTextBox.Text.Length == 0)
-                MessageBox.Show("No product entered");
-            else if (supplierTextBox.Text.Length == 0)
-                MessageBox.Show("No supplier entered");
-            else if (distributorTextBox.Text.Length == 0)
-                MessageBox.Show("No distributor entered");
-            else if (regionTextBox.Text.Length == 0)
-                MessageBox.Show("No region entered");
-            else
-            {
-                return true;
-            }
-            return false;
-        }
-
+        /// <summary>
+        /// creates a key object to be pushed to the DataUtils.addEntry method
+        /// refreshes table if successfull and closes current window
+        /// flashes error message if response is zero displaying that the key is a duplicate
+        /// </summary>
         private int addEntry()
         {
             int response;
@@ -76,7 +63,49 @@ namespace KeySuite
                 DatabaseUtils.fillTable(root.dataGridView1);
                 return response;
             }
-            
+
+        }
+
+        /// <summary>
+        /// validates the forms inputs 
+        /// </summary>
+        /// <returns>
+        /// true if valid
+        /// flase if not valid
+        /// </returns>
+        private Boolean validateInput()
+        {
+            if (cdTextBox.Text.Length < 5)
+                MessageBox.Show("No CD key too short");
+            else if (productTextBox.Text.Length == 0)
+                MessageBox.Show("No product entered");
+            else if (supplierTextBox.Text.Length == 0)
+                MessageBox.Show("No supplier entered");
+            else if (distributorTextBox.Text.Length == 0)
+                MessageBox.Show("No distributor entered");
+            else if (regionTextBox.Text.Length == 0)
+                MessageBox.Show("No region entered");
+            else
+            {
+                return true;
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// re-enables use of the calling window when the AddForm is closed
+        /// </summary>
+        private void AddForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            root.Enabled = true;
+        }
+
+        /// <summary>
+        /// Cancels operation and closes the AddForm
+        /// </summary>
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

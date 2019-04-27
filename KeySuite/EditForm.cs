@@ -12,10 +12,18 @@ namespace KeySuite
 {
     public partial class EditForm : Form
     {
-        public Form1 root { get; }
-        private Key currentKey { get;}
 
-        public EditForm(Form1 root, Key currentKey)
+        /// only getters are required here as setting the values mid edit could cause destructive edits
+        private MainForm root { get; }
+        private Key currentKey { get;}
+        
+        ///<summary>
+        /// constructor for EditForm
+        /// initialises the EditForm inputs with data from the data table
+        ///</summary>
+        /// <param name="root">The preceeding calling form</param>
+        /// <param name="=currentKey">the key from the table that is being editted</param>
+        public EditForm(MainForm root, Key currentKey)
         {
             this.root = root;
             this.currentKey = currentKey;
@@ -30,13 +38,21 @@ namespace KeySuite
             this.regionTextBox.Text = this.currentKey.region;
         }
 
+        /// <summary>
+        /// if validateInput method returns true editEntry is called
+        /// </summary>
         private void confirmButton_Click(object sender, EventArgs e)
         {
             if (validateInput())
                 editEntry();
         }
 
-        private int editEntry()
+        /// <summary>
+        /// creates a key object to be pushed to the DataUtils.modifyEntry method
+        /// refreshes table if successfull and closes current window
+        /// flashes error message if response is zero displaying that the key is a duplicate
+        /// </summary>
+        private void editEntry()
         {
             Key key = new Key(cdTextBox.Text,
             productTextBox.Text,
@@ -49,12 +65,22 @@ namespace KeySuite
             if (response > 0)
             {
                 DatabaseUtils.fillTable(root.dataGridView1);
+                this.Close();
             }
-            this.Close();
-            return response;
+            else if (response == 0)
+            {
+                MessageBox.Show("Duplicate key");
+            } 
         }
 
-            private bool validateInput()
+        /// <summary>
+        /// validates the forms inputs 
+        /// </summary>
+        /// <returns>
+        /// true if valid
+        /// flase if not valid
+        /// </returns>
+        private bool validateInput()
         {
             if (cdTextBox.Text.Length < 5)
                 MessageBox.Show("No CD key too short");
@@ -73,11 +99,17 @@ namespace KeySuite
             return false;
         }
 
+        /// <summary>
+        /// re-enables use of the calling window when the EditForm is closed
+        /// </summary>
         private void EditForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             root.Enabled = true;
         }
 
+        /// <summary>
+        /// Cancels operation and closes the EditForm
+        /// </summary>
         private void cancelButton_Click(object sender, EventArgs e)
         {
             this.Close();

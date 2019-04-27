@@ -17,12 +17,17 @@ using System.Text.RegularExpressions;
 
 namespace KeySuite
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-
+        /// <summary>
+        /// keeps track of the current row active
+        /// </summary>
         public int currentRow = 0;
 
-        public Form1()
+        /// <summary>
+        /// constructor for MainForm
+        /// </summary>
+        public MainForm()
         {
             InitializeComponent();
             if (CheckForInternetConnection() == true)
@@ -203,9 +208,6 @@ namespace KeySuite
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
 
-        }
     }
 }

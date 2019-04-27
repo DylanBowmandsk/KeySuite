@@ -2,7 +2,6 @@ C:\Users\SlotR\source\repos\KeySuite\KeySuite\bin\Debug\KeySuite.exe.config
 C:\Users\SlotR\source\repos\KeySuite\KeySuite\bin\Debug\KeySuite.exe
 C:\Users\SlotR\source\repos\KeySuite\KeySuite\bin\Debug\KeySuite.pdb
 C:\Users\SlotR\source\repos\KeySuite\KeySuite\obj\Debug\KeySuite.csprojAssemblyReference.cache
-C:\Users\SlotR\source\repos\KeySuite\KeySuite\obj\Debug\KeySuite.Form1.resources
 C:\Users\SlotR\source\repos\KeySuite\KeySuite\obj\Debug\KeySuite.Properties.Resources.resources
 C:\Users\SlotR\source\repos\KeySuite\KeySuite\obj\Debug\KeySuite.csproj.GenerateResource.cache
 C:\Users\SlotR\source\repos\KeySuite\KeySuite\obj\Debug\KeySuite.csproj.CoreCompileInputs.cache
@@ -25,3 +24,4 @@ C:\Users\SlotR\source\repos\KeySuite\KeySuite\bin\Debug\Microsoft.Dynamic.xml
 C:\Users\SlotR\source\repos\KeySuite\KeySuite\bin\Debug\Microsoft.Scripting.xml
 C:\Users\SlotR\source\repos\KeySuite\KeySuite\bin\Debug\Microsoft.Scripting.Metadata.xml
 C:\Users\SlotR\source\repos\KeySuite\KeySuite\obj\Debug\KeySuite.csproj.CopyComplete
+C:\Users\SlotR\source\repos\KeySuite\KeySuite\obj\Debug\KeySuite.MainForm.resources
