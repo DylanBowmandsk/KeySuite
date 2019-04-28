@@ -13,7 +13,7 @@ namespace KeySuite
     /// <summary>
     /// Parent class for webscraper children
     /// </summary>
-    class WebScraper
+    abstract class WebScraper
     {
         //variable holds what scipt to run
         public string progToRun { get; set; }

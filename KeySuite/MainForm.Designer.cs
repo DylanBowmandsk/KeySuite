@@ -297,8 +297,8 @@
             // 
             this.databaseStatusLabel.BackColor = System.Drawing.SystemColors.Control;
             this.databaseStatusLabel.Name = "databaseStatusLabel";
-            this.databaseStatusLabel.Size = new System.Drawing.Size(177, 17);
-            this.databaseStatusLabel.Text = "Database Status: Disconnected\\t";
+            this.databaseStatusLabel.Size = new System.Drawing.Size(168, 17);
+            this.databaseStatusLabel.Text = "Database Status: Disconnected";
             // 
             // internetStatusLabel
             // 

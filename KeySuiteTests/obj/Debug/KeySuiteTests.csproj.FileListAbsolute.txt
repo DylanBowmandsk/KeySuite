@@ -1,0 +1,17 @@
+C:\Users\SlotR\source\repos\KeySuite\KeySuiteTests\obj\Debug\KeySuiteTests.csprojAssemblyReference.cache
+C:\Users\SlotR\source\repos\KeySuite\KeySuiteTests\obj\Debug\KeySuiteTests.csproj.CoreCompileInputs.cache
+C:\Users\SlotR\source\repos\KeySuite\KeySuiteTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\SlotR\source\repos\KeySuite\KeySuiteTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\SlotR\source\repos\KeySuite\KeySuiteTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\SlotR\source\repos\KeySuite\KeySuiteTests\bin\Debug\KeySuiteTests.dll
+C:\Users\SlotR\source\repos\KeySuite\KeySuiteTests\bin\Debug\KeySuiteTests.pdb
+C:\Users\SlotR\source\repos\KeySuite\KeySuiteTests\bin\Debug\KeySuite.exe
+C:\Users\SlotR\source\repos\KeySuite\KeySuiteTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\SlotR\source\repos\KeySuite\KeySuiteTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\SlotR\source\repos\KeySuite\KeySuiteTests\bin\Debug\KeySuite.pdb
+C:\Users\SlotR\source\repos\KeySuite\KeySuiteTests\bin\Debug\KeySuite.exe.config
+C:\Users\SlotR\source\repos\KeySuite\KeySuiteTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\SlotR\source\repos\KeySuite\KeySuiteTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\SlotR\source\repos\KeySuite\KeySuiteTests\obj\Debug\KeySuiteTests.csproj.CopyComplete
+C:\Users\SlotR\source\repos\KeySuite\KeySuiteTests\obj\Debug\KeySuiteTests.dll
+C:\Users\SlotR\source\repos\KeySuite\KeySuiteTests\obj\Debug\KeySuiteTests.pdb

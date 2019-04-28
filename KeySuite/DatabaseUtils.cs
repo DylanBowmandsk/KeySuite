@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace KeySuite
 {
-    class DatabaseUtils
+    public static class DatabaseUtils
     {
         /// <summary>
         /// the main string used to connect to the database
@@ -49,15 +49,27 @@ namespace KeySuite
         /// <param name="gridView">the main forms dataGridView</param>
         /// <param name="searchTerm">the term the user is searching for...duh</param>
         /// <param name="category">which part of the table the search term is compared to</param>
-        public static void searchTable(DataGridView gridView,string searchTerm,string category)
+        /// <returns>
+        /// true if table is searched
+        /// false if not
+        /// </returns>
+        public static bool searchTable(DataGridView gridView,string searchTerm,string category)
         {
-            using (SqlConnection sqlcon = new SqlConnection(connectionString))
+            try
+            { 
+                using (SqlConnection sqlcon = new SqlConnection(connectionString))
+                {
+                    sqlcon.Open();
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter($"select * from keys where {category} like '%{searchTerm}%'", sqlcon);
+                    DataTable table = new DataTable();
+                    dataAdapter.Fill(table);
+                    gridView.DataSource = table;
+                    return true;
+                }
+            }
+            catch (SqlException e)
             {
-                sqlcon.Open();
-                SqlDataAdapter dataAdapter = new SqlDataAdapter($"select * from keys where {category} like '%{searchTerm}%'", sqlcon);
-                DataTable table = new DataTable();
-                dataAdapter.Fill(table);
-                gridView.DataSource = table;
+                return false;
             }
         }
 
@@ -92,6 +104,7 @@ namespace KeySuite
             {
                 response = 0;
             }
+
             return response;
         }
 
@@ -107,6 +120,7 @@ namespace KeySuite
         public static int modifyEntry(Key key, string currentKey)
         {
             int response;
+
             try
             {
                 using (SqlConnection sqlcon = new SqlConnection(connectionString))

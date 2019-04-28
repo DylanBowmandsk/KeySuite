@@ -35,9 +35,9 @@ namespace KeySuite
         {
             InitializeComponent();
             if (CheckForInternetConnection() == true)
-                internetStatusLabel.Text = "Internet Connection: Connected\t";
+                internetStatusLabel.Text = "Internet Connection: Connected";
             if (DatabaseUtils.fillTable(dataGridView1))
-                databaseStatusLabel.Text = "Database Status: Connected\t";
+                databaseStatusLabel.Text = "Database Status: Connected";
             else
             {
                 searchBox.Enabled = false;
