@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace KeySuiteTests
 {
-    class TestingUtils
+    public class TestingUtils
     {
 
         private static string connectionString = @"Data Source=localhost;Initial Catalog=KeySuite;Integrated Security=True";
 
-        public static bool fillTable()
+        public static bool refresh()
         {
             try
             {
@@ -37,7 +37,7 @@ namespace KeySuiteTests
                 using (SqlConnection sqlcon = new SqlConnection(connectionString))
                 {
                     sqlcon.Open();
-                    SqlDataAdapter dataAdapter = new SqlDataAdapter($"select * from keys where {category} like '%{searchTerm}%'", sqlcon);
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter($"select * from keystest where {category} like '%{searchTerm}%'", sqlcon);
                     return true;
                 }
             }
@@ -55,13 +55,19 @@ namespace KeySuiteTests
                 using (SqlConnection sqlcon = new SqlConnection(connectionString))
                 {
                     sqlcon.Open();
-                    SqlCommand cmd = new SqlCommand("INSERT INTO keys VALUES (@cdkey, @product, @supplier, @distributor, @steam_url, @g2a_url, @region)", sqlcon);
+                    SqlCommand cmd = new SqlCommand("INSERT INTO keystest VALUES (@cdkey, @product, @supplier, @distributor, @steam_url, @g2a_url, @region)", sqlcon);
                     cmd.Parameters.AddWithValue("@cdkey", key.cdkey);
                     cmd.Parameters.AddWithValue("@product", key.product);
                     cmd.Parameters.AddWithValue("@supplier", key.supplier);
                     cmd.Parameters.AddWithValue("@distributor", key.distributor);
-                    cmd.Parameters.AddWithValue("@steam_url", key.steam_url);
-                    cmd.Parameters.AddWithValue("@g2a_url", key.g2a_url);
+                    if(key.steam_url == "")
+                        cmd.Parameters.AddWithValue("@steam_url", DBNull.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@steam_url", key.steam_url);
+                    if(key.g2a_url == "")
+                        cmd.Parameters.AddWithValue("@g2a_url", DBNull.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@g2a_url", key.g2a_url);
                     cmd.Parameters.AddWithValue("@region", key.region);
                     response = cmd.ExecuteNonQuery();
                 }
@@ -71,6 +77,84 @@ namespace KeySuiteTests
                 response = 0;
             }
 
+            return response;
+        }
+
+        public static int modifyEntry(Key key, string currentKey)
+        {
+            int response;
+
+            try
+            {
+                using (SqlConnection sqlcon = new SqlConnection(connectionString))
+                {
+                    sqlcon.Open();
+                    SqlCommand cmd = new SqlCommand("Update keystest set cdkey = @cdkey, product = @product, supplier = @supplier," +
+                        " distributor = @distributor, steam_url = @steam_url, g2a_url = @g2a_url, region = @region WHERE cdkey = @current ", sqlcon);
+                    cmd.Parameters.AddWithValue("@cdkey", key.cdkey);
+                    cmd.Parameters.AddWithValue("@product", key.product);
+                    cmd.Parameters.AddWithValue("@supplier", key.supplier);
+                    cmd.Parameters.AddWithValue("@distributor", key.distributor);
+                    if (key.steam_url == "")
+                        cmd.Parameters.AddWithValue("@steam_url", DBNull.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@steam_url", key.steam_url);
+                    if (key.g2a_url == "")
+                        cmd.Parameters.AddWithValue("@g2a_url", DBNull.Value);
+                    else
+                        cmd.Parameters.AddWithValue("@g2a_url", key.g2a_url);
+                    cmd.Parameters.AddWithValue("@region", key.region);
+                    cmd.Parameters.AddWithValue("@current", currentKey);
+                    response = cmd.ExecuteNonQuery();
+                }
+            }
+            catch (SqlException e)
+            {
+                response = 0;
+            }
+
+            return response;
+
+        }
+
+        public static int deleteEntry(string current)
+        {
+            int response;
+
+            try
+            {
+                using (SqlConnection sqlcon = new SqlConnection(connectionString))
+                {
+                    sqlcon.Open();
+                    SqlCommand cmd = new SqlCommand("delete from keystest where cdkey = @current", sqlcon);
+                    cmd.Parameters.AddWithValue("@current",current);
+                    response = cmd.ExecuteNonQuery();
+                }
+            }
+            catch
+            {
+                response = 0;
+            }
+            return response;
+        }
+
+        public static int deleteAll()
+        {
+            int response;
+
+            try
+            {
+                using (SqlConnection sqlcon = new SqlConnection(connectionString))
+                {
+                    sqlcon.Open();
+                    SqlCommand cmd = new SqlCommand("delete from keystest", sqlcon);
+                    response = cmd.ExecuteNonQuery();
+                }
+            }
+            catch
+            {
+                response = 0;
+            }
             return response;
         }
     }

@@ -169,7 +169,7 @@ namespace KeySuite
                     response = cmd.ExecuteNonQuery();
                 }
             }
-            catch
+            catch(SqlException e)
             {
                 response = 0;
             }
