@@ -25,7 +25,7 @@ namespace KeySuite
         /// <summary>
         /// initialises the process values
         /// </summary>
-        public void initialise()
+        protected void initialise()
         { 
             proc.StartInfo.FileName = "pythonw.exe";
             proc.StartInfo.RedirectStandardOutput = true;
