@@ -17,10 +17,11 @@ C:\Users\SlotR\source\repos\KeySuite\KeySuite\bin\Release\Microsoft.Scripting.xm
 C:\Users\SlotR\source\repos\KeySuite\KeySuite\bin\Release\Microsoft.Scripting.Metadata.xml
 C:\Users\SlotR\source\repos\KeySuite\KeySuite\obj\Release\KeySuite.AddForm.resources
 C:\Users\SlotR\source\repos\KeySuite\KeySuite\obj\Release\KeySuite.EditForm.resources
-C:\Users\SlotR\source\repos\KeySuite\KeySuite\obj\Release\KeySuite.Form1.resources
 C:\Users\SlotR\source\repos\KeySuite\KeySuite\obj\Release\KeySuite.Properties.Resources.resources
 C:\Users\SlotR\source\repos\KeySuite\KeySuite\obj\Release\KeySuite.csproj.GenerateResource.cache
 C:\Users\SlotR\source\repos\KeySuite\KeySuite\obj\Release\KeySuite.csproj.CoreCompileInputs.cache
 C:\Users\SlotR\source\repos\KeySuite\KeySuite\obj\Release\KeySuite.csproj.CopyComplete
 C:\Users\SlotR\source\repos\KeySuite\KeySuite\obj\Release\KeySuite.exe
 C:\Users\SlotR\source\repos\KeySuite\KeySuite\obj\Release\KeySuite.pdb
+C:\Users\SlotR\source\repos\KeySuite\KeySuite\obj\Release\KeySuite.csprojAssemblyReference.cache
+C:\Users\SlotR\source\repos\KeySuite\KeySuite\obj\Release\KeySuite.MainForm.resources
