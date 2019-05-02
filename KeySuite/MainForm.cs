@@ -62,7 +62,7 @@ namespace KeySuite
         {
             currentRow = e.RowIndex;
 
-            if (currentRow >= 0)
+            if (currentRow >= 0 && internetStatusLabel.Text == "Internet Connection: Connected")
             {
                 //urls for webscraping
                 string steam_url = dataGridView1.Rows[currentRow].Cells[4].Value.ToString();
@@ -121,7 +121,7 @@ namespace KeySuite
         /// <param name="g2aPrice"></param>
         private void setG2aPrice(string g2aPrice)
         {
-            if (g2aPrice != "")
+            if (g2aPrice != "" && g2aPrice != "forbidden" && g2aPrice != "not found")
                 marketPriceLabel.Text = g2aPrice;
             else
                 marketPriceLabel.Text = "N/A";
@@ -133,7 +133,7 @@ namespace KeySuite
         /// <param name="g2aKeys"></param>
         private void setG2aKeys(string g2aKeys)
         {
-            if (g2aKeys != "")
+            if (g2aKeys != "" && g2aKeys != "forbidden" && g2aKeys != "not found")
                 keysOnMarketLabel.Text = g2aKeys;
             else
                 keysOnMarketLabel.Text = "N/A";
@@ -145,7 +145,7 @@ namespace KeySuite
         /// <param name="steamPrice"></param>
         private void setSteamValue(string steamPrice)
         {
-            if (steamPrice != "forbidden" && steamPrice != "")
+            if (steamPrice != "forbidden" && steamPrice != "" && steamPrice != "not found")
                 retailValueLabel.Text = steamPrice;
             else
             {

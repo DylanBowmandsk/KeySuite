@@ -87,14 +87,28 @@ namespace KeySuite
         {
             if (cdTextBox.Text.Length < 5)
                 MessageBox.Show("No CD key too short");
+            else if (cdTextBox.Text.Length >= 50)
+                MessageBox.Show("CD key too long");
             else if (productTextBox.Text.Length == 0)
                 MessageBox.Show("No product entered");
+            else if (productTextBox.Text.Length >= 50)
+                MessageBox.Show("Product name entered too long");
             else if (supplierTextBox.Text.Length == 0)
                 MessageBox.Show("No supplier entered");
+            else if (supplierTextBox.Text.Length >= 50)
+                MessageBox.Show("Supplier name entered too long");
             else if (distributorTextBox.Text.Length == 0)
                 MessageBox.Show("No distributor entered");
+            else if (distributorTextBox.Text.Length >= 50)
+                MessageBox.Show("Distributor entered too long");
+            else if (distributorTextBox.Text.Length >= 200)
+                MessageBox.Show("Steam url too long");
+            else if (g2aUrlTextBox.Text.Length >= 200)
+                MessageBox.Show("G2A url too long");
             else if (regionTextBox.Text.Length == 0)
                 MessageBox.Show("No region entered");
+            else if (regionTextBox.Text.Length >= 50)
+                MessageBox.Show("Region entered too long");
             else
             {
                 return true;

@@ -144,12 +144,6 @@ namespace KeySuite.Tests
         }
 
         [TestMethod()]
-        public void deleteAll()
-        {
-            Assert.AreNotEqual(0, TestingUtils.deleteAll());
-        }
-
-        [TestMethod()]
         public void modifyEntry1()
         {
             Key key = new Key("344U12-AWDJD-163-AFDDEY",
@@ -175,6 +169,7 @@ namespace KeySuite.Tests
             Assert.AreNotEqual(0, TestingUtils.modifyEntry(key, key.cdkey));
 
         }
+    
 
         [TestMethod()]
         public void deleteEntry1()
@@ -197,5 +192,12 @@ namespace KeySuite.Tests
             Assert.AreNotEqual(0, TestingUtils.deleteEntry("SKDU12-123KJD-123-AFJEY"));
 
         }
+
+        [TestMethod()]
+        public void deleteAll()
+        {
+            Assert.AreNotEqual(0, TestingUtils.deleteAll());
+        }
+
     }
 }

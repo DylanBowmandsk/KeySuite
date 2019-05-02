@@ -10,7 +10,11 @@ namespace KeySuiteTests
 {
     public class TestingUtils
     {
-
+        /// <summary>
+        /// This class functions exactly the same as the databaseutils class
+        /// the only difference is the table it connects to
+        /// please see database utils for documentation on usage
+        /// </summary>
         private static string connectionString = @"Data Source=localhost;Initial Catalog=KeySuite;Integrated Security=True";
 
         public static bool refresh()
