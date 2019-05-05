@@ -52,7 +52,10 @@ namespace KeySuite
         /// refreshes table if successfull and closes current window
         /// flashes error message if response is zero displaying that the key is a duplicate
         /// </summary>
-        private void editEntry()
+        /// <returns>
+        /// the amount of indexes affected
+        /// </returns>
+        private int editEntry()
         {
             //instance of Key class generated
             Key key = new Key(cdTextBox.Text,
@@ -69,11 +72,14 @@ namespace KeySuite
             {
                 DatabaseUtils.fillTable(root.dataGridView1);
                 this.Close();
+                return response;
             }
             else if (response == 0)
             {
                 MessageBox.Show("Duplicate key");
-            } 
+                return response;
+            }
+            return response;
         }
 
         /// <summary>
